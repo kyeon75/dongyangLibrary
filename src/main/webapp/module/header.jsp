@@ -23,6 +23,7 @@
 			<li><a href="#"><img src="resources/img/profile.png" alt="" ></a></li>
 		</ul>
 	</div>
+	
 	<div id="gnb_bottom" class="container">
 		<ul>
 			<li><a href="#">º£½ºÆ®</a></li>

@@ -12,6 +12,7 @@
 <jsp:include page="module/header.jsp" /> 
 	<div>
 		content
+		<jsp:include page="module/left.jsp"/>
 	</div>
 </body>
 </html>
