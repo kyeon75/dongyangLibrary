@@ -1,0 +1,40 @@
+@charset "utf-8";
+.container {
+	width: 1200px;
+    margin: 0 auto;
+}
+#gnb_top {
+    z-index: 20;
+}
+#gnb_top_box {
+	float: right;
+}
+#gnb_mid {
+	display: flex;
+	padding-top: 36px;
+	align-items: center;
+	justify-content: space-between;
+}
+#logo {
+	width: 200px;
+}
+#search_box {
+	border: 1px solid black;
+	border-radius: 25px;
+	height: 48px;
+	width: 400px;
+	margin-right: 400px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 10px 0px 10px;
+}
+#search {
+	border: 0;
+}
+#search_icon {
+	width: 30px;
+}
+#gnb_bottom {
+	display: flex;
+}
