@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
-</body>
-</html>
+<%
+	String title = (String)request.getAttribute("title");
+%>
+<section class="container">
+	<h3><%= title %></h3>
+	<div>
+		<jsp:include page="../module/left.jsp"/>
+	</div>
+</section>
