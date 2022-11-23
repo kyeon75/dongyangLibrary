@@ -18,5 +18,6 @@
 	<jsp:include page="module/header.jsp" /> 
 	<jsp:include page='<%= "page/" + contentPage + ".jsp"%>'/> 
 	<jsp:include page="module/footer.jsp"/>
+	git 실험
 </body>
 </html>
