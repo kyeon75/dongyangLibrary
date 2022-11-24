@@ -32,6 +32,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html {
+	overflow-y:scroll; 
+}
 body {
 	line-height: 1;
 }
@@ -56,4 +59,8 @@ a {
 }
 li {
 	display: inline-block;
+}
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
 }
