@@ -7,6 +7,8 @@
 #a2 {
 	display:none;position:absolute;left:0px;top:20px;padding:10px;
 }
+
 #a1 li:hover > ul {display:block;}
+
 a {text-decoration-line : none;}
 
