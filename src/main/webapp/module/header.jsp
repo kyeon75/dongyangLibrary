@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <header>
 	<div id="gnb_top" class="container">
 		<ul id="gnb_top_box">
-			<li><a href="./page/signUp.jsp">È¸¿ø°¡ÀÔ</a></li>
-			<li><a href="./page/login.jsp">·Î±×ÀÎ</a></li>
-			<li><a href="./page/myInfo.jsp">¸¶ÀÌÆäÀÌÁö</a></li>
+			<li><a href="${pageContext.request.contextPath}/user/signUp">íšŒì›ê°€ìž…</a></li>
+			<li><a href="${pageContext.request.contextPath}/user/login">ë¡œê·¸ì¸</a></li>
+			<li><a href="${pageContext.request.contextPath}/user/myInfo">ë§ˆì´íŽ˜ì´ì§€</a></li>
 		</ul>
 	</div>
 	<div id="gnb_mid" class="container">
 		<h1 id="logo_box">
-			<a href="./index.jsp">
-				<img id="logo" src="resources/img/logo.png" alt="logo">
+			<a href="${pageContext.request.contextPath}">
+				<img id="logo" src="${pageContext.request.contextPath}/resources/img/logo.png" alt="logo">
 			</a>
 		</h1>
 <form id="search_form" action="#" method="post">
@@ -21,16 +21,16 @@
   <input id="search_submit" type="submit" value="&#128269;"/>
 </form>
 		<ul>
-			<li><a href="#"><img src="resources/img/cart.png" alt="" ></a></li>
-			<li><a href="#"><img src="resources/img/profile.png" alt="" ></a></li>
+			<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
+			<li><a href="#"><img src="${pageContext.request.contextPath}/resources/img/profile.png" alt="" ></a></li>
 		</ul>
 	</div>
 	
 	<div id="gnb_bottom" class="container">
 		<ul>
-			<li><a href="searchBook.do?cmd=best">º£½ºÆ®</a></li>
-			<li><a href="searchBook.do?cmd=hot">ÇÖÇÑ»óÇ°</a></li>
-			<li><a href="searchBook.do?cmd=sale">ÇÒÀÎ</a></li>
+			<li><a href="${pageContext.request.contextPath}/book/best">ë² ìŠ¤íŠ¸</a></li>
+			<li><a href="${pageContext.request.contextPath}/book/hot">í•«í•œìƒí’ˆ</a></li>
+			<li><a href="${pageContext.request.contextPath}/book/sale">í• ì¸</a></li>
 		</ul>
 	</div>
 </header>

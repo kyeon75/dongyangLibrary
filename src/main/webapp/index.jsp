@@ -8,15 +8,16 @@
   	if (contentPage==null){
    		contentPage="main";
    	}
+  	System.out.println(contentPage);
 %>
 	<meta charset="utf-8">
 	<title>Insert title here</title>
-	<link href="resources/css/reset.css" rel="stylesheet">
-	<link href="resources/css/module.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/css/reset.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/css/module.css" rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="module/header.jsp" /> 
-	<jsp:include page='<%= "page/" + contentPage + ".jsp"%>'/> 
-	<jsp:include page="module/footer.jsp"/>
+	<jsp:include page="/module/header.jsp" /> 
+	<jsp:include page='<%= "/page/" + contentPage + ".jsp"%>'/> 
+	<jsp:include page="/module/footer.jsp"/>
 </body>
 </html>
