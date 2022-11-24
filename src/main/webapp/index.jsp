@@ -12,10 +12,10 @@
 	String contentPage = (String)request.getAttribute("page");
   	if (contentPage==null) {
    		contentPage="main";
-   	} else if (contentPage.equals("signUp")) {
- %>
- 		<link href="${pageContext.request.contextPath}/resources/css/signUp.css" rel="stylesheet">		
- <%
+   	} else {
+%>
+ 		<link href='<%= request.getContextPath() + "/resources/css/" + contentPage + ".css"%>' rel="stylesheet">		
+<%
    	}
 %>
 </head>
