@@ -42,10 +42,10 @@ public class BookFrontController extends HttpServlet {
 			action.execute(request, response);
 			request.setAttribute("title", "hot");
 			viewPage = "search";
-		} else if (page.equals("/sale")) {
+		} else if (page.equals("/discount")) {
 			action = new BookListAction();
 			action.execute(request, response);
-			request.setAttribute("title", "sale");
+			request.setAttribute("title", "discount");
 			viewPage = "search";
 		}
 		

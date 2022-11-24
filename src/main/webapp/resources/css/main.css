@@ -1,0 +1,26 @@
+@charset "UTF-8";
+#banner {
+width: 100%;  /*가로길이*/
+height: 100%;  /*세로길이*/
+margin-bottom: 100px;
+overflow: hidden;
+}
+
+.mainBook{
+	height: 500px;
+	margin-bottom: 20px;
+}
+
+#mainBestSeller{
+width: 100%;
+height: 250px;
+margin-top: 20px;
+margin-bottom: 100px;
+}
+
+.mainBestSellerBook{
+width: 250px;
+height: 100%;
+margin-left: 40px;
+float: left;
+}

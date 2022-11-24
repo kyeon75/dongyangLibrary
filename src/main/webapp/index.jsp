@@ -12,7 +12,8 @@
 	String contentPage = (String)request.getAttribute("page");
   	if (contentPage==null) {
    		contentPage="main";
-   	} else {
+   	} 
+  	if (contentPage!=null) {
 %>
  		<link href='<%= request.getContextPath() + "/resources/css/" + contentPage + ".css"%>' rel="stylesheet">		
 <%

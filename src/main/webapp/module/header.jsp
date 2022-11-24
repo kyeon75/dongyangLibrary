@@ -27,10 +27,14 @@
 	</div>
 	
 	<div id="gnb_bottom" class="container">
+		<div id="category">
+			카테고리
+		</div>
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/book/best">베스트</a></li>
-			<li><a href="${pageContext.request.contextPath}/book/hot">핫한상품</a></li>
-			<li><a href="${pageContext.request.contextPath}/book/sale">할인</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/best">베스트셀러  ·</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/hot">핫한상품  ·</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/discount">할인상품  ·</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/board">자유게시판</a></li>
 		</ul>
 	</div>
 </header>

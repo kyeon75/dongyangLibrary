@@ -29,13 +29,13 @@
 #search_form {
 	overflow: hidden;
 	position: relative;
-	margin-right: 400px;
+	margin-right: 100px;
 }
 	
 #input-wrapper {
 	padding: 0px 10px 0px 0px; /* Right padding for submit button width */
 	overflow: hidden;
-	width: 400px;
+	width: 700px;
 	
 }
 #search_input {
@@ -87,4 +87,9 @@
 
 #gnb_bottom {
 	display: flex;
+}
+
+.gnb_bottom_item{
+	margin: 20px 0px 20px 20px;
+	font-weight: bold;
 }
