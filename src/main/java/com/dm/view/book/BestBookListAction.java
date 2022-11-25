@@ -7,7 +7,7 @@ public class BestBookListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("title", "best");
+		request.setAttribute("title", "베스트셀러");
 		
 	}
 

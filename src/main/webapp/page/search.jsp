@@ -5,10 +5,19 @@
 	String title = (String)request.getAttribute("title");
 %>
 <section class="container">
-	<h3><%= title %></h3>
-	<div>
+	
+	<div id="left_module">
 		<jsp:include page="../module/left.jsp"/>
 	</div>
+	
+	<h1 class="search_title"><%= title %></h1>
+	<hr>
+	
+	<ul id="book_search_list">
+	
+		<jsp:include page="../module/bookItem.jsp"/>
+		
+	</ul>
 	
 	
 </section>

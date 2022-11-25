@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#left_module{
+	float: left;
+	width: 100px;
+	height: 100vh;
+	margin-right: 100px;
+}
+
+.book_item{
+	width: 1000px;
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.search_title{
+	margin-top: 100px;
+	margin-bottom: 10px;
+}
+
+.book_search_list{
+	float: left;
+}
+
+.book_item_section{
+	float: left;
+	width: 1000px;	
+}
+.book_item_img{
+	float: left;
+	height: 100%;
+	margin-right: 50px;
+}
+
+.book_item_info{
+	float: left;
+	width: 600px;
+	height: 100%;
+	
+}
+
+.book_button_wrap{
+	float: left;
+	width: 100px;
+	float: right;
+}
+
+.book_button_cart{
+	margin-bottom: 10px;
+}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #banner {
-width: 100%;  /*가로길이*/
+height: 100vh; /*가로길이*/
 height: 100%;  /*세로길이*/
 margin-bottom: 100px;
 overflow: hidden;
