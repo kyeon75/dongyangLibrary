@@ -33,19 +33,16 @@ public class BookFrontController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		if (page.equals("/best")) {
-			action = new BookListAction();
+			action = new BestBookListAction();
 			action.execute(request, response);
-			request.setAttribute("title", "best");
 			viewPage = "search";
 		} else if (page.equals("/hot")) {
-			action = new BookListAction();
+			action = new HotBookListAction();
 			action.execute(request, response);
-			request.setAttribute("title", "hot");
 			viewPage = "search";
 		} else if (page.equals("/discount")) {
-			action = new BookListAction();
+			action = new DiscountBookListAction();
 			action.execute(request, response);
-			request.setAttribute("title", "discount");
 			viewPage = "search";
 		}
 		
