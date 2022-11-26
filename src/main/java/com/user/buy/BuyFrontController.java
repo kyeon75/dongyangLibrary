@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.view.book.Action;
+import com.user.buy.Action;
 import com.view.book.BestBookListAction;
 import com.view.book.DiscountBookListAction;
 import com.view.book.HotBookListAction;

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<section class="container">
-=======
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <script type="text/javascript" src="../resources/js/book.js"></script>
