@@ -1,14 +1,12 @@
-package com.dm.view.book;
+package com.view.book;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class HotBookListAction implements Action {
-
+public class BookListAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("title", "hot");
+		//sql 알아서 불러오고
 		
 	}
-
 }

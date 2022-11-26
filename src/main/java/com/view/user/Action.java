@@ -1,8 +1,8 @@
-package com.dm.view.book;
+package com.view.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public interface Action {
-	public void execute(HttpServletRequest request, HttpServletResponse response);
+	public String execute(HttpServletRequest request, HttpServletResponse response);
 }

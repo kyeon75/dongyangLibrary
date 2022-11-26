@@ -1,4 +1,4 @@
-package com.dm.view.user;
+package com.view.user;
 
 import java.io.IOException;
 
@@ -31,16 +31,23 @@ public class UserFrontController extends HttpServlet {
 		String viewPage = null;
 		
 		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		
 		if (page.equals("/signUp")) {
 			viewPage = "signUp";
+		} else if (page.equals("/signUpProcess")) {
+			action = new SignUpAction();
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/login")) {
 			viewPage = "login";
+		} else if (page.equals("/loginProcess")) {
+			action = new LoginAction();
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/myInfo")) {
 			action = new MyInfoAction();
-			action.execute(request, response);
-			viewPage = "myInfo";
-		}
+			viewPage = action.execute(request, response);
+		} 
 		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");

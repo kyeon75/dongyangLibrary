@@ -1,13 +1,13 @@
-package com.dm.view.book;
+package com.view.book;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class DiscountBookListAction implements Action {
+public class HotBookListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("title", "discount");
+		request.setAttribute("title", "hot");
 		
 	}
 
