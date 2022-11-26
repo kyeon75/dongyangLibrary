@@ -34,7 +34,7 @@
 			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/best">베스트셀러  ·</a></li>
 			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/hot">핫한상품  ·</a></li>
 			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/discount">할인상품  ·</a></li>
-			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/board">자유게시판</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/board/board">자유게시판</a></li>
 		</ul>
 	</div>
 </header>

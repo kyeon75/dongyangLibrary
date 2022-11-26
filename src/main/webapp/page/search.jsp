@@ -14,8 +14,13 @@
 	<hr>
 	
 	<ul id="book_search_list">
-	
-		<jsp:include page="../module/bookItem.jsp"/>
+		
+		<jsp:include page="../module/bookItem.jsp">
+			<jsp:param name="bookname" value="@@"/>
+			<jsp:param name="bookprice" value="@@"/>
+			<jsp:param name="bookexplain" value="@@"/>
+			<jsp:param name="bookreview" value="@@"/>
+		</jsp:include>
 		
 	</ul>
 	

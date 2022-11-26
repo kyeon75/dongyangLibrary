@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Insert title here</title>
+	<title>동양문고</title>
 	<link href="${pageContext.request.contextPath}/resources/css/reset.css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath}/resources/css/module.css" rel="stylesheet">
 	
