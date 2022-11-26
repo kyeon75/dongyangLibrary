@@ -21,7 +21,7 @@
   <input id="search_submit" type="submit" value="&#128269;"/>
 </form>
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/buy/bookkart"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
+			<li><a href="${pageContext.request.contextPath}/buy/bookcart"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
 			<li><a href="${pageContext.request.contextPath}/buy/payment"><img src="${pageContext.request.contextPath}/resources/img/profile.png" alt="" ></a></li>
 		</ul>
 	</div>

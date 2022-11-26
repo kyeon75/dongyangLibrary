@@ -47,4 +47,9 @@
 
 .book_button_cart{
 	margin-bottom: 10px;
+	padding: 10px 20px;
+}
+
+.book_button_payment{
+	padding: 10px 20px;
 }

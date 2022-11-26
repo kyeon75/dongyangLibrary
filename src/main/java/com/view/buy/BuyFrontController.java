@@ -34,10 +34,10 @@ public class BuyFrontController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		if (page.equals("/bookkart")) {
-			action = new bookCartAction();
+		if (page.equals("/bookcart")) {
+			action = new BookCartAction();
 			action.execute(request, response);
-			viewPage = "search";
+			viewPage = "bookcart";
 		} 
 		
 		request.setAttribute("page", viewPage);

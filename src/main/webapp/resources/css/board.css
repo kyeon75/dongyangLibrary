@@ -6,13 +6,11 @@
 	margin-top: 50px;
 	margin-bottom: 15px;
 }
-.post_list{
-	margin-bottom: 50px;
-}
 
 .borad_post_item{
-	margin-bottom: 50px;	
+	margin-bottom: 10px;
 }
+
 .post_list{
 	width: 1000px;
 }
@@ -49,10 +47,33 @@
 	margin-bottom: 8px;
 }
 
+
 .board_page_list{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 20px;
 	float: left;
 }
 
+.board_page_list_num{
+	margin-right: 10px;	
+}
+
+.board_prev_button{
+	float: left;
+	margin-top: 50px;
+	margin-left: 400px;
+}
+
+.board_next_button{
+	float: left;
+	margin-top: 50px;
+	margin-left: 10px;
+}
+
 .board_post_button{
+	margin-top: 40px;
+	margin-bottom: 50px;
+	padding: 10px 20px;
 	float: right;
 }

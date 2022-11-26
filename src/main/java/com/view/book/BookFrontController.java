@@ -50,6 +50,7 @@ public class BookFrontController extends HttpServlet {
 			viewPage = "book";
 		}
 		
+		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(request, response);
