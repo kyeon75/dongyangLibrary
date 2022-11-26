@@ -1,4 +1,4 @@
-package com.user.buy;
+package com.view.buy;
 
 import java.io.IOException;
 
@@ -9,23 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.view.book.Action;
-import com.view.book.BestBookListAction;
-import com.view.book.DiscountBookListAction;
-import com.view.book.HotBookListAction;
-import com.view.user.MyInfoAction;
-import com.view.user.SignUpAction;
-
-
 @WebServlet("/buy/*")
 public class BuyFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		actionDo(request, response);
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		actionDo(request, response);
 	}
@@ -34,7 +25,7 @@ public class BuyFrontController extends HttpServlet {
 		String requestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String page = requestURI.substring(contextPath.length());
-		page = page.substring(5);
+		page = page.substring(4);
 		
 		Action action = null;
 		String viewPage = null;
@@ -44,15 +35,13 @@ public class BuyFrontController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		if (page.equals("/bookkart")) {
-			
-			
-		} else if (page.equals("/payment")) {
-			
+			action = new bookCartAction();
+			action.execute(request, response);
+			viewPage = "search";
 		} 
 		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(request, response);
 	}
-
 }
