@@ -27,7 +27,7 @@
 					</div>
 				</div>
 				<div class="css-1w0ksfz e744wfw2">
-					<button class="css-ufulao e4nu7ef3" type="button">
+					<button id="idBtn" onClick="fetchIdCheck('id')" class="css-ufulao e4nu7ef3" type="button">
 						<span class="css-ymwvow e4nu7ef1">
 							중복확인
 						</span>
@@ -108,7 +108,7 @@
 					</div>
 				</div>
 				<div class="css-1w0ksfz e744wfw2">
-					<button class="css-ufulao e4nu7ef3" type="button">
+					<button id="emailBtn" onClick="fetchIdCheck('email')" class="css-ufulao e4nu7ef3" type="button">
 						<span class="css-ymwvow e4nu7ef1">
 							중복확인
 						</span>
@@ -246,5 +246,21 @@
 	function jusoCallBack(roadAddrPart1, addrDetail){
 		baseAddress.value = roadAddrPart1;
 		subAddress.value = addrDetail;
+	}
+	function fetchIdCheck(type) {
+	    fetch("../SignUpCheckAjax?type="+type+"&value="+document.getElementById(type).value).then((response) => {
+			return response.json();
+	    }).then((data) => {
+	    	if (data.result == "true") {
+	    		alert("중복되지 않습니다");	
+	    		if (type == "id") {
+	    			document.getElementById("idBtn").className += " btn_disabled";
+	    		} else if (type == "email") {
+	    			document.getElementById("emailBtn").className += " btn_disabled";
+	    		}
+	    	} else {
+	    		alert("유효하지 않은 접근");	
+	    	}
+	    })
 	}
 </script>

@@ -31,8 +31,8 @@ public class BookFrontController extends HttpServlet {
 		String viewPage = null;
 		
 		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		
 		if (page.equals("/best")) {
 			action = new BestBookListAction();

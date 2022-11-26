@@ -29,10 +29,8 @@ public class UserFrontController extends HttpServlet {
 		
 		Action action = null;
 		String viewPage = null;
-		
 		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("utf-8");
 		
 		if (page.equals("/signUp")) {
 			viewPage = "signUp";
@@ -47,7 +45,7 @@ public class UserFrontController extends HttpServlet {
 		} else if (page.equals("/myInfo")) {
 			action = new MyInfoAction();
 			viewPage = action.execute(request, response);
-		} 
+		}
 		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
