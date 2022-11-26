@@ -6,7 +6,7 @@
 					<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" alt="배너광고" >
 				</div>
 				<div class="book_item_info">
-						책 제목 <br>
+						<a href="${pageContext.request.contextPath}/book/book">책 제목</a> <br>
 						책 가격 <br><br>
 						책 내용 책 내용 책 내용 책 내용 책 내용 책 내용 책 내용 책 내용 책 내용 책 내용 책 내용 <br><br>
 						별점 몇개
