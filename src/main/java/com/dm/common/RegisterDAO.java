@@ -4,30 +4,91 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class RegisterDAO {
-	final String USER_INSERT="insert into membertbl values(?, ?, ?, ?);";
-	final String USER_LIST="select * from membertbl;";
+	final String USER_INSERT="insert into user values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	final String USER_LIST="select * from user;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
 	
-	public void insertMember(RegisterDTO mem) {
+	public boolean insertUser(RegisterDTO mem) {
+		boolean result = false;
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_INSERT);
-			pstmt.setString(1, mem.getMemberid());
+			pstmt.setString(1, mem.getId());
 			pstmt.setString(2, mem.getPassword());
 			pstmt.setString(3, mem.getName());
 			pstmt.setString(4, mem.getEmail());
+			pstmt.setString(5, mem.getMobileNumber());
+			pstmt.setString(6, mem.getBaseAddress());
+			pstmt.setString(7, mem.getSubAddress());
+			pstmt.setString(8, mem.getGender());
+			pstmt.setString(9, mem.getBirth());
 			pstmt.executeUpdate();
-			conn.close();
-			pstmt.close();
+			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			result = false;
 		} finally {
 			JDBCutil.close(pstmt, conn);
 		}
+		return result;
 	}
-	
+	private RegisterDTO resultToDTO(ResultSet rs) {
+		RegisterDTO rd=new RegisterDTO();
+		try {
+			rd.setId(rs.getString("id"));
+			rd.setPassword(rs.getString("password"));
+			rd.setName(rs.getString("name"));
+			rd.setEmail(rs.getString("email"));
+			rd.setMobileNumber(rs.getString("mobile_number"));
+			rd.setBaseAddress(rs.getString("base_address"));
+			rd.setSubAddress(rs.getString("sub_address"));
+			rd.setGender(rs.getString("gender"));
+			rd.setBirth(rs.getString("birth"));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rd;
+	}
+	public RegisterDTO selectUserId(String id) {
+		RegisterDTO dto = new RegisterDTO();
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement("select * from user where id= ? ;");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dto = resultToDTO(rs);
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		return dto;
+	}
+	public RegisterDTO selectMobileNumber(String id) {
+		RegisterDTO dto = new RegisterDTO();
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement("select * from user where id= ? ;");
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dto = resultToDTO(rs);
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		return dto;
+	}
 	public ArrayList<RegisterDTO> selectMemberList(){
 		ArrayList<RegisterDTO> aList = new ArrayList<RegisterDTO>();
 		try {
@@ -36,10 +97,15 @@ public class RegisterDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				RegisterDTO rd=new RegisterDTO();
-				rd.setMemberid(rs.getString("memberid"));
+				rd.setId(rs.getString("id"));
 				rd.setPassword(rs.getString("password"));
 				rd.setName(rs.getString("name"));
 				rd.setEmail(rs.getString("email"));
+				rd.setMobileNumber(rs.getString("mobile_number"));
+				rd.setBaseAddress(rs.getString("base_address"));
+				rd.setSubAddress(rs.getString("sub_address"));
+				rd.setGender(rs.getString("gender"));
+				rd.setBirth(rs.getString("birth"));
 				aList.add(rd);
 			}
 		} catch (SQLException e) {
