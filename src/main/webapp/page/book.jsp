@@ -8,7 +8,7 @@
 			</div>
 			<div class="item">
 				<div class="book_info1">
-					<h3> 책이름 </h3>
+					<h3> 책이름.. </h3>
 					<p>저자</p>
 					<p>별점</p>
 					<p>가격</p>
