@@ -1,4 +1,4 @@
-package com.view.book;
+package com.view.board;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/book/*")
-public class BookFrontController extends HttpServlet {
+@WebServlet("/board/*")
+public class BoardFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,31 +25,22 @@ public class BookFrontController extends HttpServlet {
 		String requestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String page = requestURI.substring(contextPath.length());
-		page = page.substring(5);
+		page = page.substring(6);
 		
 		Action action = null;
 		String viewPage = null;
+		
+		System.out.println(123);
 		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		if (page.equals("/best")) {
-			action = new BestBookListAction();
+		if (page.equals("/board")) {
+			action = new BoardAction();
 			action.execute(request, response);
-			viewPage = "search";
-		} else if (page.equals("/hot")) {
-			action = new HotBookListAction();
-			action.execute(request, response);
-			viewPage = "search";
-		} else if (page.equals("/discount")) {
-			action = new DiscountBookListAction();
-			action.execute(request, response);
-			viewPage = "search";
-		} else if (page.equals("/book")) {
-			viewPage = "book";
+			viewPage = "board";
 		}
-		
 		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");

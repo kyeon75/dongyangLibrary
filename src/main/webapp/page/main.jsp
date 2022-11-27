@@ -10,55 +10,55 @@
 <section class="container">
 		
 	<div class ="mainBook" align="center">
-		<h2 id="mainBestTitle">베스트셀러</h2>
+		<h1 class="mainItemTitle">베스트셀러</h1>
 		<ul id="mainBestSeller">
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book1.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book1.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book2.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book2.jpg" >
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" >
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book4.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book4.jpg">
 			</li>
 		</ul>
 	</div>
 
 	<div class ="mainBook" align="center">
-		<h2 id="mainHotTitle">핫한상품</h2>
+		<h1 class="mainItemTitle">핫한상품</h1>
 		<ul id="mainBestSeller">
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book1.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book1.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book2.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book2.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book3.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book4.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book4.jpg">
 			</li>
 		</ul>
 	</div>
 	
 	<div class ="mainBook" align="center">
-		<h2 id="mainDiscountTitle">할인상품</h2>
+		<h1 class="mainItemTitle">할인상품</h1>
 		<ul id="mainBestSeller">
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book1.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book1.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book2.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book2.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book3.jpg">
 			</li>
 			<li class="mainBestSellerBook">
-				<img src="${pageContext.request.contextPath}/resources/img/book4.jpg" alt="배너광고" >
+				<img src="${pageContext.request.contextPath}/resources/img/book4.jpg">
 			</li>
 		</ul>
 	</div>
