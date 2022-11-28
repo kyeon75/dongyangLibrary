@@ -1,9 +1,21 @@
 @charset "UTF-8";
 #banner {
-	height: 100vh; /*가로길이*/
+	width: 100%; /*가로길이*/
 	height: 100%;  /*세로길이*/
-	margin-bottom: 100px;
 	overflow: hidden;
+	margin-top: 10px;
+}
+.bannerImg {
+	width: 1600px;
+	margin-left: calc( 100vw - 1600px );
+}
+
+.mainBook{
+	margin: 120px 0px 120px 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 
 .mainItemTitle{
@@ -11,21 +23,16 @@
 	font-weight: bold;
 }
 
-.mainBook{
-	height: 500px;
-	margin-bottom: 20px;
-}
-
-#mainBestSeller{
+.bookItemBox{
 	width: 100%;
-	height: 250px;
-	margin-top: 20px;
-	margin-bottom: 100px;
+	display: flex;
+	justify-content: space-around;
+	margin-top: 30px
 }
-
-.mainBestSellerBook{
-	width: 250px;
-	height: 100%;
-	margin-left: 40px;
-	float: left;
+.bookName {
+	font-weight: bold;
+}
+.bookImg {
+	width: 240px;
+	height: 360px;
 }

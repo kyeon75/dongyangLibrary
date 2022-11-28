@@ -87,9 +87,35 @@
 
 #gnb_bottom {
 	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: start;
+}
+#category {
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+#gnb_bottom_box {
+	margin-left: 100px;
+}
+.gnb_bottom_item {
+	margin: 20px 0px 20px 0px;
+	font-weight: bold;
+	padding : 0px 30px 0px 30px;
+	border-right: 1px solid black;
+}
+.gnb_bottom_item:last-child {
+	border-right: none;
 }
 
-.gnb_bottom_item{
-	margin: 20px 0px 20px 20px;
-	font-weight: bold;
+footer {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	background-color: #000000;
+	color: white;
+	height: 200px;
+}
+footer div {
+	font-size: 3rem
 }
