@@ -8,10 +8,11 @@
 	String bookexplain = request.getParameter("bookexplain");
 	String bookreview = request.getParameter("bookreview");
 %>
+
 <li class="book_item">
 	<div class="book_item_section">
 		<div class="book_item_img">
-			<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" alt="배너광고" >
+			<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" >
 		</div>
 		<div class="book_item_info">
 				<a href="${pageContext.request.contextPath}/book/book"><%= bookname %></a> <br>

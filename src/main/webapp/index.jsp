@@ -21,8 +21,10 @@
 %>
 </head>
 <body>
-	<jsp:include page="module/header.jsp" /> 
-	<jsp:include page='<%= "page/" + contentPage + ".jsp"%>'/> 
+	<jsp:include page="module/header.jsp" />
+	<div class="wrapper">
+		<jsp:include page='<%= "page/" + contentPage + ".jsp"%>'/>
+	</div>
 	<jsp:include page="module/footer.jsp"/>
 </body>
 </html>
