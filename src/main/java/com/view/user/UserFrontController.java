@@ -44,6 +44,9 @@ public class UserFrontController extends HttpServlet {
 		} else if (page.equals("/loginProcess")) {
 			action = new LoginAction();
 			viewPage = action.execute(request, response);
+		} else if (page.equals("/logout")) {
+			action = new LogoutAction();
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/myInfo")) {
 			action = new MyInfoAction();
 			viewPage = action.execute(request, response);

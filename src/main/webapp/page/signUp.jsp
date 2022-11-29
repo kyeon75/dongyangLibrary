@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <section id="signUpContainer" class="container">
 	<h3 id="title">회원가입</h3>
 	<form class="css-mhmtvt e15so55l1" action="${pageContext.request.contextPath}/user/signUpProcess" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">

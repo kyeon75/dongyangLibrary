@@ -1,5 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="com.dm.common.RegisterDTO"%>
+
+<%
+	RegisterDTO dto = (RegisterDTO)request.getAttribute("myInfo");
+%>
+
 <section class="container">
-	마이페이지
+	<%= dto.getId() %>, 
+	<%= dto.getPassword() %>,
+	<%= dto.getName() %>, 
+	<%= dto.getEmail() %>, 
+	<%= dto.getBirth() %>, 
+	<%= dto.getGender() %>, 
+	<%= dto.getMobileNumber() %>, 
+	<%= dto.getBaseAddress() %>,
+	<%= dto.getSubAddress() %>, 
 </section>
