@@ -12,7 +12,7 @@
 <li class="book_item">
 	<div class="book_item_section">
 		<div class="book_item_img">
-			<img src="${pageContext.request.contextPath}/resources/img/book3.jpg" >
+			<img src="${pageContext.request.contextPath}/resources/img/<%= bookimagename %>.jpg" >
 		</div>
 		<div class="book_item_info">
 				<a href="${pageContext.request.contextPath}/book/book"><%= bookname %></a> <br>

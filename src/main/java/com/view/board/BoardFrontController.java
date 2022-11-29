@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.book.HotBookListAction;
+
 @WebServlet("/board/*")
 public class BoardFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,6 +42,14 @@ public class BoardFrontController extends HttpServlet {
 			action = new BoardAction();
 			action.execute(request, response);
 			viewPage = "board";
+		} else if (page.equals("/postEditor")) {
+			action = new BoardPostEditorAction();
+			action.execute(request, response);
+			viewPage = "boardPostEditor";
+		} else if (page.equals("/post")) {
+			action = new BoardPostAction();
+			action.execute(request, response);
+			viewPage = "boardPost";
 		}
 		
 		request.setAttribute("page", viewPage);

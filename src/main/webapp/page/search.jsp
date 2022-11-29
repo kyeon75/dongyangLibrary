@@ -15,7 +15,7 @@
 	
 	<ul id="book_search_list">
 		
-		<jsp:include page="../module/bookItem.jsp">
+		<jsp:include page="../module/searchBookItem.jsp">
 			<jsp:param name="bookname" value="@@"/>
 			<jsp:param name="bookprice" value="@@"/>
 			<jsp:param name="bookexplain" value="@@"/>
