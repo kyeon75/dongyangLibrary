@@ -12,15 +12,19 @@ public class LoginAction implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String pw = request.getParameter("password");
 		
 		RegisterDAO dao = new RegisterDAO();
 		RegisterDTO dto = dao.selectUserId(id);
-		if (dto != null) {
+		if (dto == null) {
+			request.setAttribute("alert", "로그인 실패");
+			return "login";
+		} else if (dto.getPassword().equals(pw)) {
+			request.setAttribute("alert", "로그인 성공");
+			return "main";
+		} else {
+			request.setAttribute("alert", "로그인 실패");
 			return "login";
 		}
-		
-		return "main";
 	}
-
 }
