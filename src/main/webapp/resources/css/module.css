@@ -120,15 +120,13 @@ html, body {
 }
 
 footer {
-	
-	align-items: center;
-	text-align: center;
+	width: 100%;
 	background-color: #000000;
 	color: white;
 	height: 200px;
-	bottom: 0;
-  	
 }
-footer div {
-	font-size: 3rem
+footer .container {
+	display: flex;
+	align-content: center;
+	flex-direction: row;
 }

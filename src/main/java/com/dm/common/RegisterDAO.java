@@ -70,12 +70,12 @@ public class RegisterDAO {
 		}
 		return dto;
 	}
-	public RegisterDTO selectMobileNumber(String id) {
+	public RegisterDTO selectEmail(String email) {
 		RegisterDTO dto = new RegisterDTO();
 		try {
 			conn=JDBCutil.getConnection();
-			pstmt = conn.prepareStatement("select * from user where id= ? ;");
-			pstmt.setString(1, id);
+			pstmt = conn.prepareStatement("select * from user where email = ? ;");
+			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				dto = resultToDTO(rs);

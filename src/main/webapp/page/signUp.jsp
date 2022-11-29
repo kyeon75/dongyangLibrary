@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 <section id="signUpContainer" class="container">
 	<h3 id="title">회원가입</h3>
-	<form class="css-mhmtvt e15so55l1" action="${pageContext.request.contextPath}/user/signUpProcess" method="post">
+	<form class="css-mhmtvt e15so55l1" action="${pageContext.request.contextPath}/user/signUpProcess" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
 		<div class="css-rb0i47 e1yyjjij1">
 			<span class="css-qq9ke6 e1yyjjij0">
 				*
@@ -25,9 +25,10 @@
 							<input id="id" name="id" placeholder="아이디를 입력해주세요" type="text" class="css-1bkd15f e1uzxhvi2">
 						</div>
 					</div>
+					<div class="css-shoa2s e744wfw1"><p class="css-1ozil7i e1revjhv0">6자 이상 16자 이하의 영문 대소문자와 숫자를 조합</p></div>
 				</div>
 				<div class="css-1w0ksfz e744wfw2">
-					<button class="css-ufulao e4nu7ef3" type="button">
+					<button id="idCheckBtn" class="css-ufulao e4nu7ef3" type="button">
 						<span class="css-ymwvow e4nu7ef1">
 							중복확인
 						</span>
@@ -108,11 +109,6 @@
 					</div>
 				</div>
 				<div class="css-1w0ksfz e744wfw2">
-					<button class="css-ufulao e4nu7ef3" type="button">
-						<span class="css-ymwvow e4nu7ef1">
-							중복확인
-						</span>
-					</button>
 				</div>
 			</div>
 			<div class="css-1pjgd36 e744wfw6">
@@ -127,7 +123,7 @@
 				<div class="css-82a6rk e744wfw3">
 					<div class="css-jmalg e1uzxhvi6">
 						<div class="css-176lya2 e1uzxhvi3">
-							<input id="mobileNumber" name="mobileNumber" placeholder="숫자만 입력해주세요" type="tel" class="css-1bkd15f e1uzxhvi2">
+							<input id="mobileNumber" name="mobileNumber" placeholder="숫자만 입력해주세요" type="number" class="css-1bkd15f e1uzxhvi2">
 						</div>
 					</div>
 				</div>
@@ -170,21 +166,22 @@
 			</div>
 			<div class="css-1pjgd36 e744wfw6">
 				<div class="css-1y8737n e744wfw5">
-					<label class="css-1obgjqh e744wfw4">성별</label>
+					<label class="css-1obgjqh e744wfw4">
+						성별
+						<span class="css-qq9ke6 e744wfw0">
+							*
+						</span>
+					</label>
 				</div>
 				<div class="css-82a6rk e744wfw3">
 					<div class="css-14wodj6 es1pbny0">
 						<label class="css-z9g6s0 et8nqc33" for="gender-man">
-							<input id="gender-man" name="gender" type="radio" value="MALE" checked>
+							<input id="gender-man" name="gender" type="radio" value="MALE">
 							<span aria-labelledby="gender-man" class="css-mgd87h et8nqc31">남자</span>
 						</label>
 						<label class="css-z9g6s0 et8nqc33" for="gender-woman">
 							<input id="gender-woman" name="gender" type="radio" value="FEMALE">
 							<span aria-labelledby="gender-woman" class="css-mgd87h et8nqc31">여자</span>
-						</label>
-						<label class="css-z9g6s0 et8nqc33" for="gender-none">
-							<input id="gender-none" name="gender" type="radio" value="NONE">
-							<span aria-labelledby="gender-none" class="css-mgd87h et8nqc31">선택안함</span>
 						</label>
 					</div>
 				</div>
@@ -193,25 +190,30 @@
 			</div>
 			<div class="css-1pjgd36 e744wfw6">
 				<div class="css-1y8737n e744wfw5">
-					<label class="css-1obgjqh e744wfw4">생년월일</label>
+					<label class="css-1obgjqh e744wfw4">
+						생년월일
+						<span class="css-qq9ke6 e744wfw0">
+							*
+						</span>
+					</label>
 				</div>
 				<div class="css-82a6rk e744wfw3">
 					<div class="css-18n8lnw e1ke3ehm1">
 						<div class="css-1dkwuq4 e1uzxhvi6">
 							<div  class="css-xsmgyi e1uzxhvi3">
-								<input name="birthYear" placeholder="YYYY" type="text" height="40" class="css-1368454 e1uzxhvi2">
+								<input id="birthYear" name="birthYear" placeholder="YYYY" type="number" class="css-1368454 e1uzxhvi2" min="1900" max="2022">
 							</div>
 						</div>
 						<span class="css-iehpfx e1ke3ehm0"></span>
 						<div class="css-1dkwuq4 e1uzxhvi6">
 							<div class="css-xsmgyi e1uzxhvi3">
-								<input name="birthMonth" placeholder="MM" type="text" height="40" class="css-1368454 e1uzxhvi2">
+								<input id="birthMonth" name="birthMonth" placeholder="MM" type="number" class="css-1368454 e1uzxhvi2" min="1" max="12">
 							</div>
 						</div>
 						<span class="css-iehpfx e1ke3ehm0"></span>
 						<div class="css-1dkwuq4 e1uzxhvi6">
 							<div class="css-xsmgyi e1uzxhvi3">
-								<input name="birthDay" placeholder="DD" type="text" height="40" class="css-1368454 e1uzxhvi2">
+								<input id="birthDay" name="birthDay" placeholder="DD" type="number" class="css-1368454 e1uzxhvi2" min="1" max="31">
 							</div>
 						</div>
 					</div>
@@ -240,11 +242,142 @@
 	let mobileNumber = document.getElementById("mobileNumber");
 	let baseAddress = document.getElementById("baseAddress");
 	let subAddress = document.getElementById("subAddress");
+	let birthYear = document.getElementById("birthYear")
+	let birthMonth = document.getElementById("birthMonth")
+	let birthDay = document.getElementById("birthDay")
+	let chk_radio = document.getElementsByName('gender');
+	
+	let idCheckBtn = document.getElementById("idCheckBtn")
+	let emailCheckBtn = document.getElementById("emailCheckBtn")
+	
 	function goPopup(){
 		var pop = window.open("../module/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
 	}
 	function jusoCallBack(roadAddrPart1, addrDetail){
 		baseAddress.value = roadAddrPart1;
 		subAddress.value = addrDetail;
+	}
+	idCheckBtn.addEventListener('click', function() {
+		if (id.value === "") {
+			alert("아이디를 입력하세요")
+			id.focus()
+			return false
+		}
+		if (validIdCheck(id.value)) {
+			alert("아이디 형식에 맞춰 입력허세요")
+			id.focus()
+			return false
+		}
+		fetch("../SignUpCheck?id=" + id.value)
+		.then(response => response.text())
+		.then(res => { 
+			if (res === "true") {
+				alert("사용할 수 있는 아이디입니다.")
+				idCheckBtn.disabled = true;
+			} else {
+				alert("사용할 수 없는 아이디입니다.")
+				id.focus()
+			}
+		})
+	})
+	id.addEventListener('change', function() {
+		idCheckBtn.disabled = false;
+	})
+	function checkForm() {
+		if (id.value === "") {
+			alert("아이디를 입력하세요")
+			id.focus()
+			return false
+		} else if (!idCheckBtn.disabled) {
+			alert("아이디 중복확인을 하세요")
+			return false
+		}else if (password.value === "") {
+			alert("비밀번호를 입력하세요")
+			password.focus()
+			return false
+		} else if (passwordConfirm.value === "") {
+			alert("비밀번호 입력을 입력하세요")
+			passwordConfirm.focus()
+			return false
+		} else if (name.value === "") {
+			alert("이름을 입력하세요")
+			name.focus()
+			return false
+		} else if (email.value === "") {
+			alert("이메일을 입력하세요")
+			email.focus()
+			return false
+		} else if (mobileNumber.value === "") {
+			alert("전화번호를 입력하세요")
+			mobileNumber.focus()
+			return false
+		} else if (baseAddress.value === "") {
+			alert("주소를 입력하세요")
+			baseAddress.focus()
+			return false
+		} else if (subAddress.value === "") {
+			alert("상세주소를 입력하세요")
+			subAddress.focus()
+			return false
+		} else if (password.value !== passwordConfirm.value) {
+			alert("비밀번호와 비밀번호 확인이 다릅니다.")
+			passowrd.focus()
+			return false
+		} else if (validEmailCheck(email.value)) {
+			alert("올바른 형식의 이메일을 입력하세요")
+			email.focus()
+			return false
+		} else if (mobileNumber.value.length !== 11) {
+			alert("전화번호 형식이 다릅니다.")
+			mobileNumber.focus()
+			return false
+		} else if (validIdCheck(id.value)) {
+			alert("아이디 형식에 맞춰 입력허세요")
+			id.focus()
+			return false
+		} else if (atLeastOneRadio()) {
+			alert("성별을 선택해주세요")
+			return false
+		} else if (birthYear.value == '' || birthYear.value === undefined || birthYear.value === 0 || birthMonth.value === null) {
+			alert("생년월일을 입력하세요")
+			birthYear.focus()
+			return false
+		} else if (birthMonth.value == '' || birthMonth.value === undefined || birthMonth.value === 0 || birthMonth.value === null) {
+			alert("생년월일을 입력하세요")
+			birthMonth.focus()
+			return false
+		} else if (birthDay.value == '' || birthDay.value === undefined || birthDay.value === 0 || birthMonth.value === null) {
+			alert("생년월일을 입력하세요")
+			birthDay.focus()
+			return false
+		} else if (birthYear.value.length !== 4 || birthMonth.value.length !== 2 || birthDay.value.length !== 2) {
+			alert("생년월일 형식이 맞지 않습니다.")
+			return false
+		} else {
+			return true
+		}
+	}
+	//이메일 유효성 검사
+	function validEmailCheck(email){
+		var regex = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	    return !(email != '' && email != 'undefined' && regex.test(email));
+	}
+	//아이디 유효성 검사, 6자 이상 16자 이하의 영문 대소문자와 숫자를 조합
+	function validIdCheck(id) {
+		var regex = /^[a-zA-z0-9]{6,16}$/; 
+        return  !(regex.test(id))
+	}
+	// 라디오 버튼이 선택되지 경우 true를 리턴하는 함수
+	function atLeastOneRadio() {
+		var sel_type = null;
+		for(var i=0; i<chk_radio.length; i++){
+			if(chk_radio[i].checked == true){ 
+				sel_type = chk_radio[i].value;
+			}
+		}
+		if(sel_type == null){
+			return true;
+		}
+		return false;
 	}
 </script>

@@ -37,8 +37,10 @@ public class SignUpAction implements Action {
 		
 
 		RegisterDAO dao = new RegisterDAO();
-		if (!dao.insertUser(dto)) {
-			return "error";
+		if (dao.insertUser(dto)) {
+			request.setAttribute("alert", "회원가입에 성공했습니다.");
+		} else {
+			request.setAttribute("alert", "회원가입에 실패했습니다.");
 		}
 		return "main";
 	}

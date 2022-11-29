@@ -164,6 +164,24 @@ input[type=checkbox], input[type=radio] {
     box-sizing: border-box;
     padding: 0;
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#idCheckBtn:disabled {
+    border-color: rgb(221, 221, 221);
+    color: rgb(221, 221, 221);
+}
+.css-shoa2s {
+    padding: 10px 0px;
+}
+.css-1ozil7i {
+    font-size: 13px;
+    color: rgb(240, 63, 64);
+    margin-top: -4px;
+}
 .css-1w0ksfz {
     width: 120px;
     margin-left: 8px;
@@ -199,7 +217,7 @@ input[type=checkbox], input[type=radio] {
 .css-14wodj6 {
     display: flex;
     -webkit-box-pack: justify;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
 }
 .css-1pes2r6 {
@@ -272,6 +290,7 @@ input[type=checkbox], input[type=radio] {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
+    justify-content: space-around;
     width: 100%;
     border: 1px solid rgb(204, 204, 204);
     border-radius: 3px;
