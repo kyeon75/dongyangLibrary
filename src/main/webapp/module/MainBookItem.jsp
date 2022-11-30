@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%
-	request.setCharacterEncoding("utf-8");
+	request.setCharacterEncoding("UTF-8");
 	String title = request.getParameter("title");
-	
-	System.out.print(title);
 %>
+
 <div class ="mainBook">
 	<h1 class="mainItemTitle"><%= title %></h1>
 	<ul class="bookItemBox">

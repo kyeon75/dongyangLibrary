@@ -40,6 +40,14 @@ public class BoardFrontController extends HttpServlet {
 			action = new BoardAction();
 			action.execute(request, response);
 			viewPage = "board";
+		} else if (page.equals("/postEditor")) {
+			action = new BoardPostEditorAction();
+			action.execute(request, response);
+			viewPage = "boardPostEditor";
+		} else if (page.equals("/post")) {
+			action = new BoardPostAction();
+			action.execute(request, response);
+			viewPage = "boardPost";
 		}
 		
 		request.setAttribute("page", viewPage);

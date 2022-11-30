@@ -34,7 +34,7 @@
 		
 		<button class="board_next_button"> 다음 </button>
 			
-		<button class="board_post_button"> 글 작성 </button>
+		<a href="${pageContext.request.contextPath}/board/postEditor"><button class="board_post_button">글 작성</button></a>
 		
 	
 	</section>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
 <section>   
 	<div id="banner">
@@ -9,7 +8,7 @@
 
 <section class="container">
 	<jsp:include page="/module/MainBookItem.jsp">
-		<jsp:param value="BEST" name="title"/>
+		<jsp:param value="베스트셀러" name="title"/>
 	</jsp:include>
 	<jsp:include page="/module/MainBookItem.jsp">
 		<jsp:param value="핫한도서" name="title"/>

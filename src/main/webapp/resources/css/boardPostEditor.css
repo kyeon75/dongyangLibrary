@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.board_post_editor_title{
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.post_title{
+	border:1px solid black;
+	border-radius: 4px;
+	width: 1200px;
+	height: 50px;
+}
+
+.post_content{
+	border:1px solid black;
+	border-radius: 4px;
+	width: 1200px;
+	height: 500px;
+}
+.post_submit{
+	float: right;
+	margin-top: 30px;
+	padding: 10px 40px;
+}
+
+.post_delete_button{
+	float: right;
+	margin-top: 30px;
+	margin-right: 20px;
+	padding: 10px 40px;
+}

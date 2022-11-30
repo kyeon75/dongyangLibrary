@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.board_post_page_title{
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+.board_post_title{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.board_post_user{
+	float:left;
+	margin-right: 100px;
+}
+
+.board_post_comment_user{
+	float: left;
+	margin-right: 100px;
+}
+
+.board_post_comment_content{
+	float: left;
+}
+
+.board_post_comment_date{
+	float: right;
+}
+
+.board_post_list_button{
+	float: right;
+	padding: 10px 40px;
+}

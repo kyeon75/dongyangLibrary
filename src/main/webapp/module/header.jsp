@@ -1,10 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    
 <header>
 	<div id="gnb_top" class="container">
 		<ul id="gnb_top_box">
-			<li><a href="${pageContext.request.contextPath}/user/signUp">회원가입</a></li>
+<% 
+	if(session.getAttribute("id") != null) {
+%>
+			<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+<%
+	} else {
+%>
 			<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
+			<li><a href="${pageContext.request.contextPath}/user/signUp">회원가입</a></li>
+<%
+	}
+%>
 			<li><a href="${pageContext.request.contextPath}/user/myInfo">마이페이지</a></li>
 		</ul>
 	</div>
