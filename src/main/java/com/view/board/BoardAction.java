@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 public class BoardAction implements Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("title", "자유게시판");
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		return "board";
 		
 	}
 
