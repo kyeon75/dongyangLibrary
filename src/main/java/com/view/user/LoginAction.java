@@ -14,9 +14,9 @@ public class LoginAction implements Action{
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("password");
-		
 		RegisterDAO dao = new RegisterDAO();
 		RegisterDTO dto = dao.selectUserId(id);
+		
 		if (dto == null) {
 			request.setAttribute("alert", "로그인 실패");
 			return "login";
