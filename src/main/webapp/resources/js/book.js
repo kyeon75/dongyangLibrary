@@ -1,5 +1,5 @@
 function count(type) {
-	var resultElement = document.getElementById("result");
+	var resultElement = document.getElementById("resultbox");
 	
 	let num = resultElement.innerText;
 	

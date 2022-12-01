@@ -29,8 +29,8 @@
 				</div>
 				<br><br>
 				<div class="quantity">
-					<input type="button" onclick='count("plus")' value="+"/>
-					<div id="result">0</div>
+					<input type="button" onclick='count("plus")' value="+"/> <br><br>
+					<div id="result">0</div> <br>
 					<input type="button" onclick='count("minus")' value="-"/>			
 				</div>
 					

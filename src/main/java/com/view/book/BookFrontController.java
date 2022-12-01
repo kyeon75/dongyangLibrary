@@ -47,6 +47,8 @@ public class BookFrontController extends HttpServlet {
 			action.execute(request, response);
 			viewPage = "search";
 		} else if (page.equals("/book")) {
+			action = new BookListAction();
+			action.execute(request, response);
 			viewPage = "book";
 		}
 		
