@@ -1,12 +1,15 @@
 package com.dm.common;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RegisterDAO {
-	final String USER_INSERT="insert into usertbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
-	final String USER_LIST="select * from usertbl;";
-	final String USER_SELECT_ID = "select * from usertbl where user_id= ?;";
+public class boardDAO {
+	final String USER_INSERT="insert into user values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	final String USER_LIST="select * from user;";
+	final String USER_SELECT_ID = "select * from user where id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
@@ -38,7 +41,7 @@ public class RegisterDAO {
 	private RegisterDTO resultToDTO(ResultSet rs) {
 		RegisterDTO rd=new RegisterDTO();
 		try {
-			rd.setId(rs.getString("user_id"));
+			rd.setId(rs.getString("id"));
 			rd.setPassword(rs.getString("password"));
 			rd.setName(rs.getString("name"));
 			rd.setEmail(rs.getString("email"));
@@ -61,7 +64,6 @@ public class RegisterDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				dto = resultToDTO(rs);
-				return dto;
 			} else {
 				return null;
 			}
@@ -70,7 +72,7 @@ public class RegisterDAO {
 		} finally {
 			JDBCutil.close(rs, pstmt, conn);
 		}
-		return null;
+		return dto;
 	}
 	public ArrayList<RegisterDTO> selectMemberList(){
 		ArrayList<RegisterDTO> aList = new ArrayList<RegisterDTO>();

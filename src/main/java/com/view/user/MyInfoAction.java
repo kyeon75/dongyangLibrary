@@ -17,6 +17,7 @@ public class MyInfoAction implements Action {
 		RegisterDAO dao = new RegisterDAO();
 		RegisterDTO dto = null;
 		if (id == null || (dto = dao.selectUserId(id)) == null) {
+			System.out.println(id);
 			return "login";
 		} else {
 			request.setAttribute("myInfo", dto);
