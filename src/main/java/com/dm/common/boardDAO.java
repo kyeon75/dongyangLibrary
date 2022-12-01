@@ -1,9 +1,12 @@
 package com.dm.common;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RegisterDAO {
+public class boardDAO {
 	final String USER_INSERT="insert into user values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	final String USER_LIST="select * from user;";
 	final String USER_SELECT_ID = "select * from user where id= ?;";
