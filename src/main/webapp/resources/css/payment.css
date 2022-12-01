@@ -10,55 +10,94 @@
 }
 
 .payment_user_h1{
+	float:left;
 	font-weight: bold;
 	font-size: 25px;
 	margin-bottom: 20px;
 }
 
-.payment_info_list{
+.payment_user_h2{
+	
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.payment_user_info_radio{
 	float:left;
-	width: 1200px;
-	height: 500px;
+	margin-left: 20px;
+}
+
+.payment_payment_check{
+	float:right;
+	margin-top: 50px;
+	height: 100%;
+	width: 200px;
+	border:2px solid gold;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+
+.payment_payment_title{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.payment_payment_price{
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.payment_payment_button{
+	padding: 10px 40px;
+}
+
+.payment_info_list{
+	
+	width: 600px;
+	height: 250px;
 	font-weight: bold;
 	font-size: 20px;
 }
 .payment_info_list_item{
-	width: 600px;
+	width: 800px;
 	margin-bottom: 20px;
 }
 
 .payment_info_list_address_input{
 	height: 30px;
-	width: 400px;
+	width: 500px;
 	margin-left: 60px;
 	
 }
 
 .payment_info_list_detail_address_input{
 	height: 30px;
-	width: 400px;
+	width: 500px;
 	margin-left: 20px;
 }
 
 .payment_info_list_callnum_input{
 	height: 30px;
-	width: 400px;
+	width: 500px;
 	margin-left: 20px;
 }
 
 .payment_info_list_user_input{
 	height: 30px;
-	width: 400px;
+	width: 500px;
 	margin-left: 60px;
 }
 
-.cart_list{
+.payment_cart_list{
 	float:left;
 	margin-top: 30px;
 	width: 950px;
 }
 
 .cart_list_item{
+	float:left;
 	margin-bottom: 50px;
 }
 
