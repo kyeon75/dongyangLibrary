@@ -8,5 +8,7 @@ public class BookListAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		//sql 알아서 불러오고
 		
+		
+		
 	}
 }

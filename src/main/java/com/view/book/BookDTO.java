@@ -13,6 +13,7 @@ public class BookDTO {
 	private int tday_view;
 	private int tday_buy;
 	private String category;
+	private int score;
 	
 	public String getBook_id() {
 		return book_id;
@@ -73,6 +74,12 @@ public class BookDTO {
 	}
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score = score;
 	}
 	
 	

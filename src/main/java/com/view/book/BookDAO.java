@@ -18,10 +18,8 @@ public class BookDAO {
 	public List<BookDTO> selectBookPage(String standard) {
 		List<BookDTO> bList = new Vector<BookDTO>();
 		
-		String query = "select * from booktbl";
-		if (!standard.equals("")) {
-			query += " order by " + standard + " desc limit 10";
-		}
+		String query = "select * from booktbl where "+ standard + " is not null " + 
+		"order by " + standard + " desc limit 10";
 		
 		try {
 			conn=JDBCutil.getConnection();
