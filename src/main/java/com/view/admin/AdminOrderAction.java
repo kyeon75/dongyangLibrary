@@ -9,7 +9,7 @@ public class AdminOrderAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "order";
+		return "orderMgr";
 		
 	}
 

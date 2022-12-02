@@ -4,7 +4,7 @@
 	String contentPage = (String)request.getAttribute("page");
 	
   	if (contentPage==null)
-   		contentPage="user";
+   		contentPage="userMgr";
 %>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="module/adminHeader.jsp"></jsp:include>
 	<div class="wrapper">
 		<jsp:include page='<%= "/admin/page/" + contentPage + ".jsp"%>'/>
 	</div>
