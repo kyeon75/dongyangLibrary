@@ -10,7 +10,6 @@
 
 	<jsp:include page="../module/adminHeader.jsp"></jsp:include>
 	
-
 	<table>
 	<tr> 
 	<td align="center" bgcolor="#FFFFCC">
@@ -26,7 +25,7 @@
 		</tr>
 		
 		<jsp:include page="../module/userMgrTable.jsp">
-			<jsp:param name="username" value="@@"/>
+			<jsp:param name="username" value="@@@@@@@@@@@"/>
 			<jsp:param name="userid" value="@@"/>
 			<jsp:param name="userpassword" value="@@"/>
 			<jsp:param name="userphonenum" value="@@"/>
@@ -38,9 +37,6 @@
 	</tr>
 	</table>
 
-
-
-	
 
 </body>
 </html>

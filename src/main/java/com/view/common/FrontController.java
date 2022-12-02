@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.view.admin.AdminBoardAction;
 import com.view.admin.AdminBookAction;
 import com.view.admin.AdminBookInsertAction;
+import com.view.admin.AdminBookProcAction;
 import com.view.admin.AdminOrderAction;
 import com.view.admin.AdminUserAction;
+import com.view.admin.AdminUserUpdateAction;
+import com.view.admin.AdminUserUpdateProcAction;
 import com.view.board.BoardAction;
 import com.view.board.BoardPostAction;
 import com.view.board.BoardPostEditorAction;
@@ -127,6 +130,18 @@ public class FrontController extends HttpServlet {
 			isAdminPage = true;
 		} else if (page.equals("/admin/bookInsert.do")) {
 			action = new AdminBookInsertAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/userUpdate.do")) {
+			action = new AdminUserUpdateAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/userUpdateProc.do")) {
+			action = new AdminUserUpdateProcAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/bookProc.do")) {
+			action = new AdminBookProcAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
 		}

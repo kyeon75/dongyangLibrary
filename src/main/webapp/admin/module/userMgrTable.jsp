@@ -15,5 +15,5 @@
 	<td align="center"><%= userpassword %></td>
 	<td align="center"><%= userphonenum %></td>
 	<td align="center"><%= useremail %></td>
-	<td align="center">수정</td>
+	<td align="center"><a href="${pageContext.request.contextPath}/admin/userUpdate.do"> 수정 </a></td>
 </tr>

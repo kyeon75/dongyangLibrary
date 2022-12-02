@@ -15,13 +15,17 @@
 	<tr> 
 	<td align="center" bgcolor="#FFFFCC">
 
-		<form method="post" action="ProductProc.jsp?flag=insert" enctype="multipart/form-data">
+		<form method="post" action="${pageContext.request.contextPath}/admin/bookProc.do?flag=insert" enctype="multipart/form-data">
 		<table>
 		<tr bgcolor="#996600"> 
 		<td colspan="2" align="center"><font color="#FFFFFF">책 등록</font></td>
 		</tr>
 		<tr> 
 		<td align="center">책 이름</td>
+		<td align="left"><input type="text" name="name" size="20"></td>
+		</tr>
+		<tr> 
+		<td align="center">책 저자</td>
 		<td align="left"><input type="text" name="name" size="20"></td>
 		</tr>
 		<tr> 

@@ -19,6 +19,7 @@
 		<table>
 		<tr bgcolor="#996600"> 
 		<td align="center"><font color="#FFFFFF">이름</font></td>
+		<td align="center"><font color="#FFFFFF">저자</font></td>
 		<td align="center"><font color="#FFFFFF">가격</font></td>
 		<td align="center"><font color="#FFFFFF">내용</font></td>
 		<td align="center"><font color="#FFFFFF">재고</font></td>
@@ -31,6 +32,7 @@
 		
 		<jsp:include page="../module/bookMgrTable.jsp">
 			<jsp:param name="bookname" value="@@"/>
+			<jsp:param name="bookauthor" value="@@"/>
 			<jsp:param name="bookprice" value="@@"/>
 			<jsp:param name="bookexplain" value="@@"/>
 			<jsp:param name="bookcount" value="@@"/>
