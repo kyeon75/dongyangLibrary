@@ -4,12 +4,12 @@
 <section class="container">
 	<h1 class="board_post_editor_title">글작성</h1>
 	
-	<form action="${pageContext.request.contextPath}/board/postEditorProcess" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
+	<form action="${pageContext.request.contextPath}/postEditorProcess.do" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
 		<input placeholder="제목을 입력하세요" class="post_title" type="text" name="title"/>
 		<textarea class="post_content" name="content"></textarea>
 		<input class="post_submit" type="submit" value="등록">
 	</form>
-	<a href="${pageContext.request.contextPath}/board/postEditor"><button class="post_delete_button"> 취소 </button></a>
+	<a href="${pageContext.request.contextPath}/postEditor.do"><button class="post_delete_button"> 취소 </button></a>
 </section>
 <script>
 	let title = document.getElementsByClassName("post_title")[0];

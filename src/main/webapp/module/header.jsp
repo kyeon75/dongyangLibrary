@@ -6,16 +6,16 @@
 <% 
 	if(session.getAttribute("id") != null) {
 %>
-			<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
+			<li><a href="${pageContext.request.contextPath}/logout.do">로그아웃</a></li>
+			<li><a href="${pageContext.request.contextPath}/myInfo.do">마이페이지</a></li>
 <%
 	} else {
 %>
-			<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>
-			<li><a href="${pageContext.request.contextPath}/user/signUp">회원가입</a></li>
+			<li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
+			<li><a href="${pageContext.request.contextPath}/signUp.do">회원가입</a></li>
 <%
 	}
 %>
-			<li><a href="${pageContext.request.contextPath}/user/myInfo">마이페이지</a></li>
 		</ul>
 	</div>
 	<div id="gnb_mid" class="container">
@@ -31,8 +31,8 @@
   <input id="search_submit" type="submit" value="&#128269;"/>
 </form>
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/buy/bookcart"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
-			<li><a href="${pageContext.request.contextPath}/buy/payment"><img src="${pageContext.request.contextPath}/resources/img/profile.png" alt="" ></a></li>
+			<li><a href="${pageContext.request.contextPath}/bookcart.do"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
+			<li><a href="${pageContext.request.contextPath}/payment.do"><img src="${pageContext.request.contextPath}/resources/img/profile.png" alt="" ></a></li>
 		</ul>
 	</div>
 	

@@ -3,6 +3,8 @@ package com.view.board;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.common.Action;
+
 public class BoardPostEditorAction implements Action {
 
 	@Override

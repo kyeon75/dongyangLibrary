@@ -1,4 +1,4 @@
-package com.view.board;
+package com.view.common;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

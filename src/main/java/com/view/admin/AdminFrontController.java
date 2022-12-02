@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.common.Action;
+
 @WebServlet("/admin/*")
 public class AdminFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,9 +32,7 @@ public class AdminFrontController extends HttpServlet {
 		Action action = null;
 		String viewPage = null;
 		
-		System.out.println(123);
-		
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
@@ -40,7 +40,8 @@ public class AdminFrontController extends HttpServlet {
 			action = new AdminUserAction();
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/book")) {
-			viewPage = "book";
+			action = new AdminBookAction();
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/board")) {
 			action = new AdminBoardAction();
 			viewPage = action.execute(request, response);
@@ -50,7 +51,7 @@ public class AdminFrontController extends HttpServlet {
 		}
 		
 		request.setAttribute("page", viewPage);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/index.jsp");
 		dispatcher.forward(request, response);
 	}
 }
