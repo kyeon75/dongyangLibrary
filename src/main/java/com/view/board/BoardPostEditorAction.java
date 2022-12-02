@@ -13,9 +13,10 @@ public class BoardPostEditorAction implements Action {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		
-		
-		//여기서 dto 객체 만들고
-		//dao에 넣어서 board insert 하면 됨
+		BoardDTO dto = new BoardDTO();
+		dto.setTitle(title);
+		dto.setContent(content);
+		BoardDAO dao = new BoardDAO();
 		return "board";
 	}
 }

@@ -251,7 +251,7 @@
 	let emailCheckBtn = document.getElementById("emailCheckBtn")
 	
 	function goPopup(){
-		var pop = window.open("../module/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+		var pop = window.open("./module/jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
 	}
 	function jusoCallBack(roadAddrPart1, addrDetail){
 		baseAddress.value = roadAddrPart1;
@@ -268,7 +268,7 @@
 			id.focus()
 			return false
 		}
-		fetch("../SignUpCheck?id=" + id.value)
+		fetch("./SignUpCheck?id=" + id.value)
 		.then(response => response.text())
 		.then(res => { 
 			if (res === "true") {

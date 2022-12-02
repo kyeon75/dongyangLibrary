@@ -32,21 +32,22 @@ public class SignUpAction implements Action {
         //생일을 조합해 date 도메인에 들어갈 수 있게 함
         String date = paramMap.get("birthYear") + "-" + paramMap.get("birthMonth") + "-" + paramMap.get("birthDay");
         
+        System.out.println(paramMap.get("id"));
         //아이디 검증
         if (!Pattern.matches("^[a-zA-z0-9]{6,16}$", paramMap.get("id"))) {
-  	  		request.setAttribute("alert", "회원가입에 실패했습니다.");
+  	  		request.setAttribute("alert", "아이디 검증 실패. 회원가입에 실패했습니다.");
   	  		return "main";
         }
         
         //전화번호 검증(숫자인지 검사)
         if (!Pattern.matches("^[0-9]*$", paramMap.get("mobileNumber"))) {
-  	  		request.setAttribute("alert", "회원가입에 실패했습니다.");
+  	  		request.setAttribute("alert", "전화번호 검증 실패. 회원가입에 실패했습니다.");
   	  		return "main";
         }
         
         //이메일 검증
-  	  	if(!Pattern.matches("^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$", paramMap.get("email"))) {
-  	  		request.setAttribute("alert", "회원가입에 실패했습니다.");
+  	  	if(!Pattern.matches("(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])", paramMap.get("email"))) {
+  	  		request.setAttribute("alert", "이메일 검증 실패. 회원가입에 실패했습니다.");
   	  		return "main";
   	  	}
         
@@ -68,7 +69,7 @@ public class SignUpAction implements Action {
 		if (dao.insertUser(dto)) {
 			request.setAttribute("alert", "회원가입에 성공했습니다.");
 		} else {
-			request.setAttribute("alert", "회원가입에 실패했습니다.");
+			request.setAttribute("alert", "데이터베이스에 접근할 수 없습니다. 회원가입에 실패했습니다.");
 		}
 		return "main";
 	}
