@@ -120,6 +120,7 @@ html, body {
 }
 
 footer {
+	clear: both;
 	width: 100%;
 	background-color: #000000;
 	color: white;

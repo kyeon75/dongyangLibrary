@@ -1,12 +1,14 @@
-package com.view.board;
+package com.view.admin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BoardPostEditorAction implements Action {
+public class AdminOrderAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "board";
+		return "order";
+		
 	}
+
 }

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.book.BookListAction;
+
 @WebServlet("/buy/*")
 public class BuyFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,7 +40,11 @@ public class BuyFrontController extends HttpServlet {
 			action = new BookCartAction();
 			action.execute(request, response);
 			viewPage = "bookcart";
-		} 
+		} else if (page.equals("/payment")) {
+			action = new PaymentAction();
+			action.execute(request, response);
+			viewPage = "payment";
+		}
 		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");

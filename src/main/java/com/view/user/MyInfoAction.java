@@ -13,6 +13,7 @@ public class MyInfoAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		
+		request.setAttribute("title", "마이페이지");
 		String id = (String)session.getAttribute("id");
 		RegisterDAO dao = new RegisterDAO();
 		RegisterDTO dto = null;

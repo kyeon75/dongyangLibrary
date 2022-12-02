@@ -3,10 +3,11 @@
 
 <%
 	RegisterDTO dto = (RegisterDTO)request.getAttribute("myInfo");
+	String title = (String)request.getAttribute("title");
 %>
 
 <section class="container">
-	<%= dto.getId() %>, 
+	<%-- <%= dto.getId() %>,
 	<%= dto.getPassword() %>,
 	<%= dto.getName() %>, 
 	<%= dto.getEmail() %>, 
@@ -14,5 +15,16 @@
 	<%= dto.getGender() %>, 
 	<%= dto.getMobileNumber() %>, 
 	<%= dto.getBaseAddress() %>,
-	<%= dto.getSubAddress() %>, 
+	<%= dto.getSubAddress() %>, --%>
+	
+	<h1 class="myinfo_title"><%= title %></h1>
+	
+	<button class="myinfo_button_1" type="button"> 주문내역 </button>
+
+	<button class="myinfo_button" type="button"> 내정보 </button>
+
+	<button class="myinfo_button" type="button"> 장바구니 </button>
+
+	<button class="myinfo_button" type="button"> 내가쓴글 </button>
+	
 </section>
