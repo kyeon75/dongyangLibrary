@@ -32,7 +32,7 @@
 </form>
 		<ul>
 			<li><a href="${pageContext.request.contextPath}/bookcart.do"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
-			<li><a href="${pageContext.request.contextPath}/payment.do"><img src="${pageContext.request.contextPath}/resources/img/profile.png" alt="" ></a></li>
+			<li><a href="${pageContext.request.contextPath}/myInfo.do"><img src="${pageContext.request.contextPath}/resources/img/profile.png" alt="" ></a></li>
 		</ul>
 	</div>
 	

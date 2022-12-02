@@ -1,19 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<ul>
-	<li>
-		<a href="${pageContext.request.contextPath}/admin/user.do">유저관리</a>
-	</li>
-	
-	<li>
-		<a href="${pageContext.request.contextPath}/admin/book.do">도서관리</a>
-	</li>
-	
-	<li>
-		<a href="${pageContext.request.contextPath}/admin/board.do">게시글관리</a>
-	</li>
-	
-	<li>
-		<a href="${pageContext.request.contextPath}/admin/order.do">주문관리</a>
-	</li>
-</ul>
+<table>
+  <tr bgcolor="#FFCC00"> 
+    <td align="center"><b><a href="Index.jsp">관리자 홈 </a></b></td>
+    <td align="center"><b><a href="AdminLogout.jsp">관리자 로그아웃 </a></b></td>
+    <td align="center"><b><a href="${pageContext.request.contextPath}/admin/userMgr.do">회원 관리 </a></b></td>
+    <td align="center"><b><a href="${pageContext.request.contextPath}/admin/bookMgr.do">상품 관리 </a></b></td>
+    <td align="center"><b><a href="${pageContext.request.contextPath}/admin/orderMgr.do">주문 관리</a></b></td>
+    <td align="center"><b><a href="${pageContext.request.contextPath}/admin/boardMgr.do">게시판 관리 </a></b></td>
+  </tr>
+</table> 

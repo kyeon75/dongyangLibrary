@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.view.admin.AdminBoardAction;
 import com.view.admin.AdminBookAction;
+import com.view.admin.AdminBookInsertAction;
 import com.view.admin.AdminOrderAction;
 import com.view.admin.AdminUserAction;
 import com.view.board.BoardAction;
@@ -108,23 +109,28 @@ public class FrontController extends HttpServlet {
 			action = new AdminBoardAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
-		} else if (page.equals("/admin/board.do")) {
+		} else if (page.equals("/admin/boardMgr.do")) {
 			action = new AdminBoardAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
-		} else if (page.equals("/admin/book.do")) {
+		} else if (page.equals("/admin/bookMgr.do")) {
 			action = new AdminBookAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
-		} else if (page.equals("/admin/order.do")) {
+		} else if (page.equals("/admin/orderMgr.do")) {
 			action = new AdminOrderAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
-		} else if (page.equals("/admin/user.do")) {
+		} else if (page.equals("/admin/userMgr.do")) {
 			action = new AdminUserAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
+		} else if (page.equals("/admin/bookInsert.do")) {
+			action = new AdminBookInsertAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
 		}
+		
 		
 		
 		request.setAttribute("page", viewPage);

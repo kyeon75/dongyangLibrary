@@ -9,7 +9,7 @@ public class AdminUserAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "user";
+		return "userMgr";
 		
 	}
 
