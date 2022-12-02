@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.common.Action;
+
 @WebServlet("/book/*")
 public class BookFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,20 +38,16 @@ public class BookFrontController extends HttpServlet {
 		
 		if (page.equals("/best")) {
 			action = new BestBookListAction();
-			action.execute(request, response);
-			viewPage = "search";
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/hot")) {
 			action = new HotBookListAction();
-			action.execute(request, response);
-			viewPage = "search";
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/discount")) {
 			action = new DiscountBookListAction();
-			action.execute(request, response);
-			viewPage = "search";
+			viewPage = action.execute(request, response);
 		} else if (page.equals("/book")) {
 			action = new BookListAction();
-			action.execute(request, response);
-			viewPage = "book";
+			viewPage = action.execute(request, response);
 		}
 		
 		

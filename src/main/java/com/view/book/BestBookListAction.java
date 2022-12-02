@@ -5,12 +5,14 @@ import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.common.Action;
+
 
 
 public class BestBookListAction implements Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) {
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("title", "베스트셀러");
 		
 		BookDAO dao = new BookDAO();
@@ -21,7 +23,6 @@ public class BestBookListAction implements Action {
 		
 		
 		
-		
+		return "search";
 	}
-
 }

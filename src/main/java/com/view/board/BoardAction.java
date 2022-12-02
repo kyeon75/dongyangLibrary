@@ -10,7 +10,5 @@ public class BoardAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		return "board";
-		
 	}
-
 }

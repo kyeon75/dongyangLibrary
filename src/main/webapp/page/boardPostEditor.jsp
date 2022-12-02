@@ -9,7 +9,7 @@
 		<textarea class="post_content" name="content"></textarea>
 		<input class="post_submit" type="submit" value="등록">
 	</form>
-	<a href="${pageContext.request.contextPath}/postEditor.do"><button class="post_delete_button"> 취소 </button></a>
+	<a href="${pageContext.request.contextPath}/board.do"><button class="post_delete_button"> 취소 </button></a>
 </section>
 <script>
 	let title = document.getElementsByClassName("post_title")[0];

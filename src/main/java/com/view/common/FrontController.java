@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.view.board.BoardAction;
 import com.view.board.BoardPostAction;
 import com.view.board.BoardPostEditorAction;
+import com.view.book.BestBookListAction;
+import com.view.book.BookListAction;
+import com.view.book.DiscountBookListAction;
+import com.view.book.HotBookListAction;
 import com.view.buy.BookCartAction;
 import com.view.buy.PaymentAction;
 import com.view.user.LoginAction;
@@ -80,7 +84,20 @@ public class FrontController extends HttpServlet {
 		} else if (page.equals("/post.do")) {
 			action = new BoardPostAction();
 			viewPage = action.execute(request, response);
+		} else if (page.equals("/best.do")) {
+			action = new BestBookListAction();
+			viewPage = action.execute(request, response);
+		} else if (page.equals("/hot.do")) {
+			action = new HotBookListAction();
+			viewPage = action.execute(request, response);
+		} else if (page.equals("/discount.do")) {
+			action = new DiscountBookListAction();
+			viewPage = action.execute(request, response);
+		} else if (page.equals("/book.do")) {
+			action = new BookListAction();
+			viewPage = action.execute(request, response);
 		}
+		
 		
 		request.setAttribute("page", viewPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");

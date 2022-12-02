@@ -41,10 +41,10 @@
 			<span>&#9776;</span>카테고리
 		</div>
 		<ul id="gnb_bottom_box">
-			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/best">베스트셀러</a></li>
-			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/hot">핫한상품</a></li>
-			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/book/discount">할인상품</a></li>
-			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/board/board">자유게시판</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/best.do">베스트셀러</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/hot.do">핫한상품</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/discount.do">할인상품</a></li>
+			<li class="gnb_bottom_item"><a href="${pageContext.request.contextPath}/board.do">자유게시판</a></li>
 		</ul>
 	</div>
 </header>

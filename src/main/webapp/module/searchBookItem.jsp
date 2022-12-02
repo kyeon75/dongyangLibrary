@@ -14,7 +14,7 @@
 			<img src="${pageContext.request.contextPath}/resources/img/<%= bookimagename %>.jpg" >
 		</div>
 		<div class="book_item_info">
-				<a href="${pageContext.request.contextPath}/book/book"><%= bookname %></a> <br>
+				<a href="${pageContext.request.contextPath}/book.do"><%= bookname %></a> <br>
 				<%= bookprice %> <br><br>
 				<%= bookexplain %> <br><br>
 				<%= bookreview %>
