@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	//액션 탑
-	
-	//액션 바텀
+	order
 </body>
 </html>

@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.view.admin.AdminBoardAction;
+import com.view.admin.AdminBookAction;
+import com.view.admin.AdminOrderAction;
+import com.view.admin.AdminUserAction;
 import com.view.board.BoardAction;
 import com.view.board.BoardPostAction;
 import com.view.board.BoardPostEditorAction;
@@ -46,7 +50,7 @@ public class FrontController extends HttpServlet {
 		
 		Action action = null;
 		String viewPage = null;
-		
+		Boolean isAdminPage = false;
 		System.out.println(requestURI);
 		System.out.println(contextPath);
 		System.out.println(page);
@@ -96,11 +100,40 @@ public class FrontController extends HttpServlet {
 		} else if (page.equals("/book.do")) {
 			action = new BookListAction();
 			viewPage = action.execute(request, response);
+		} else if (page.equals("/admin.do")) {
+			action = new AdminBoardAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/index.do")) {
+			action = new AdminBoardAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/board.do")) {
+			action = new AdminBoardAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/book.do")) {
+			action = new AdminBookAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/order.do")) {
+			action = new AdminOrderAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
+		} else if (page.equals("/admin/user.do")) {
+			action = new AdminUserAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
 		}
 		
 		
 		request.setAttribute("page", viewPage);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-		dispatcher.forward(request, response);
+		if (!isAdminPage) {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
+		} else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/index.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 }
