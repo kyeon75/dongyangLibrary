@@ -4,9 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dm.common.RegisterDAO;
-import com.dm.common.RegisterDTO;
-
 public class MyInfoAction implements Action {
        
 	@Override
@@ -14,8 +11,8 @@ public class MyInfoAction implements Action {
 		HttpSession session = request.getSession();
 		
 		String id = (String)session.getAttribute("id");
-		RegisterDAO dao = new RegisterDAO();
-		RegisterDTO dto = null;
+		UserDAO dao = new UserDAO();
+		UserDTO dto = null;
 		if (id == null || (dto = dao.selectUserId(id)) == null) {
 			System.out.println(id);
 			return "login";

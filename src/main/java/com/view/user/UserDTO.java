@@ -1,6 +1,6 @@
-package com.dm.common;
+package com.view.user;
 
-public class RegisterDTO {
+public class UserDTO {
 	private String id;
 	private String password;
 	private String name;

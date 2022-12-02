@@ -1,20 +1,19 @@
-package com.dm.common;
+package com.view.user;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
-public class boardDAO {
-	final String USER_INSERT="insert into user values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
-	final String USER_LIST="select * from user;";
-	final String USER_SELECT_ID = "select * from user where id= ?;";
+import com.dm.common.JDBCutil;
+
+public class UserDAO {
+	final String USER_INSERT="insert into usertbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+	final String USER_LIST="select * from usertbl;";
+	final String USER_SELECT_ID = "select * from usertbl where user_id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
 	
-	public boolean insertUser(RegisterDTO mem) {
+	public boolean insertUser(UserDTO mem) {
 		boolean result = false;
 		try {
 			conn=JDBCutil.getConnection();
@@ -38,10 +37,10 @@ public class boardDAO {
 		}
 		return result;
 	}
-	private RegisterDTO resultToDTO(ResultSet rs) {
-		RegisterDTO rd=new RegisterDTO();
+	private UserDTO resultToDTO(ResultSet rs) {
+		UserDTO rd=new UserDTO();
 		try {
-			rd.setId(rs.getString("id"));
+			rd.setId(rs.getString("user_id"));
 			rd.setPassword(rs.getString("password"));
 			rd.setName(rs.getString("name"));
 			rd.setEmail(rs.getString("email"));
@@ -55,8 +54,8 @@ public class boardDAO {
 		}
 		return rd;
 	}
-	public RegisterDTO selectUserId(String id) {
-		RegisterDTO dto = new RegisterDTO();
+	public UserDTO selectUserId(String id) {
+		UserDTO dto = new UserDTO();
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_SELECT_ID);
@@ -64,6 +63,7 @@ public class boardDAO {
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				dto = resultToDTO(rs);
+				return dto;
 			} else {
 				return null;
 			}
@@ -72,16 +72,16 @@ public class boardDAO {
 		} finally {
 			JDBCutil.close(rs, pstmt, conn);
 		}
-		return dto;
+		return null;
 	}
-	public ArrayList<RegisterDTO> selectMemberList(){
-		ArrayList<RegisterDTO> aList = new ArrayList<RegisterDTO>();
+	public ArrayList<UserDTO> selectMemberList(){
+		ArrayList<UserDTO> aList = new ArrayList<UserDTO>();
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_LIST);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				RegisterDTO rd=new RegisterDTO();
+				UserDTO rd=new UserDTO();
 				rd.setId(rs.getString("id"));
 				rd.setPassword(rs.getString("password"));
 				rd.setName(rs.getString("name"));

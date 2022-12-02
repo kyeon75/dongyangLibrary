@@ -1,15 +1,9 @@
-package com.dm.common;
+package com.view.board;
 
-public class boardDTO {
-	private String userId;
+public class BoardDTO {
 	private String title;
 	private String content;
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+	
 	public String getTitle() {
 		return title;
 	}

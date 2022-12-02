@@ -4,9 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dm.common.RegisterDAO;
-import com.dm.common.RegisterDTO;
-
 public class LoginAction implements Action{
 
 	@Override
@@ -14,8 +11,8 @@ public class LoginAction implements Action{
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("password");
-		RegisterDAO dao = new RegisterDAO();
-		RegisterDTO dto = dao.selectUserId(id);
+		UserDAO dao = new UserDAO();
+		UserDTO dto = dao.selectUserId(id);
 		
 		if (dto == null) {
 			request.setAttribute("alert", "로그인 실패");
