@@ -9,6 +9,8 @@ public class BoardAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		BoardDAO dao = new BoardDAO();
+		request.setAttribute("boardList", dao.selectBoardList());
 		return "board";
 	}
 }

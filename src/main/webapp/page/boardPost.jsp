@@ -1,42 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
-	String title = (String)request.getAttribute("title");
-%>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 <section class="container">
-
-	<h1 class="board_post_page_title"><%= title %></h1>
+	<h1 class="board_post_page_title">자유게시판</h1>
+	
 	<hr>
 	<br>
+	
 	<div class="board_post_title">
-		글 제목
+		${requestScope.title}
 	</div>
+	
 	<br>
+	
 	<div class="board_post_user">
-		작성자
+		${requestScope.user}
 	</div>
 	
 	<div>
-		작성 날짜
+		${requestScope.date}
 	</div>
+	
 	<br>
 	<hr>
 	<br>
 	
 	<div>
-		글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 
-		글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 
-		글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 
-		글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 
-		글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 글 내용 변수에 넣고 표현식 이용해서 가져오면 될것같습니다. 
+		${requestScope.content}
 	</div>
 	<br>
 	<hr>
