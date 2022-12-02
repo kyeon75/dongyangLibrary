@@ -9,6 +9,7 @@
 %>
 
 <li class="book_item">
+	<hr>
 	<div class="book_item_section">
 		<div class="book_item_img">
 			<img src="${pageContext.request.contextPath}/resources/img/<%= bookimagename %>.jpg" >
@@ -19,7 +20,7 @@
 				<%= bookexplain %> <br><br>
 				<%= bookreview %>
 		</div>
-				
+		<br><br>
 		<div class="book_button_wrap">
 			<button class="book_button_cart" type="button">
 				장바구니에 담기
@@ -29,5 +30,4 @@
 			</button>
 		</div>
 	</div>
-	<hr>
 </li>

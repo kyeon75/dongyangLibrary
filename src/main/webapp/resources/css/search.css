@@ -9,7 +9,7 @@
 
 .book_item{
 	width: 1000px;
-	height: 300px;
+	height: 200px;
 	margin-bottom: 20px;
 }
 
@@ -24,7 +24,7 @@
 
 .book_item_section{
 	float: left;
-	width: 1000px;	
+	width: 950px;	
 }
 .book_item_img{
 	float: left;
@@ -42,14 +42,17 @@
 .book_button_wrap{
 	float: left;
 	width: 100px;
+	height: 100px;
 	float: right;
 }
 
 .book_button_cart{
+	width: 150px;
 	margin-bottom: 10px;
-	padding: 10px 20px;
+	padding: 20px 20px;
 }
 
 .book_button_payment{
-	padding: 10px 20px;
+	width: 150px;
+	padding: 20px 20px;
 }
