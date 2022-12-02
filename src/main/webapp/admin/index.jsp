@@ -4,7 +4,7 @@
 	String contentPage = (String)request.getAttribute("page");
 	
   	if (contentPage==null)
-   		contentPage="main";
+   		contentPage="user";
 %>
 <!DOCTYPE html>
 <html>
