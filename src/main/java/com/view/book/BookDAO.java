@@ -77,19 +77,16 @@ public class BookDAO {
 		
 	}
 	//카테고리 검색
-	public List<BookDTO> selectCategory(String standard,int start) {
+	public List<BookDTO> selectCategory(String standard) {
 		List<BookDTO> bList = new Vector<BookDTO>();
 		
 		String query = "select * from (select *from booktbl where category= " + standard +
-				")t limit ? offset ?";
+				")t";
 		
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(query);
 			
-			
-			pstmt.setInt(1, 5);
-			pstmt.setInt(2, start);
 			rs = pstmt.executeQuery();
 			
 			

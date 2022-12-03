@@ -22,6 +22,7 @@ import com.view.board.BoardAction;
 import com.view.board.BoardPostAction;
 import com.view.board.BoardPostEditorAction;
 import com.view.book.BestBookListAction;
+import com.view.book.BookCategoryAction;
 import com.view.book.BookListAction;
 import com.view.book.DiscountBookListAction;
 import com.view.book.HotBookListAction;
@@ -105,6 +106,9 @@ public class FrontController extends HttpServlet {
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/book.do")) {
 			action = new BookListAction();
+			viewPage = action.execute(request, response);
+		} else if (page.equals("/category.do")) {
+			action = new BookCategoryAction();
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/admin.do")) {
 			action = new AdminBoardAction();
