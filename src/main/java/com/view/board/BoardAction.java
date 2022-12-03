@@ -10,7 +10,14 @@ public class BoardAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		BoardDAO dao = new BoardDAO();
-		request.setAttribute("boardList", dao.selectBoardList());
+		String boardPage = request.getParameter("board_page");
+		if (boardPage != null) {
+			request.setAttribute("boardList", dao.selectBoardList(Integer.parseInt(boardPage)-1));
+		} else {
+			request.setAttribute("boardList", dao.selectBoardList());
+		}
+		
+		
 		return "board";
 	}
 }

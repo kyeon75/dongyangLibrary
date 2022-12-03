@@ -11,7 +11,7 @@ import com.view.user.UserDTO;
 
 public class BoardDAO {
 	final String BOARD_INSERT="insert into boardtbl(board_title, board_content, user_id) values(?, ?, ?);";
-	final String BOARD_LIST="select * from boardtbl;";
+	final String BOARD_LIST="select * from boardtbl order by board_id desc LIMIT ?, ?;";
 	final String BOARD_SELECT_ID = "select * from boardtbl where board_id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
@@ -37,10 +37,19 @@ public class BoardDAO {
 		return result;
 	}
 	public ArrayList<BoardDTO> selectBoardList() {
+		return selectBoardList(0, 10);
+	}
+	public ArrayList<BoardDTO> selectBoardList(int page) {
+		return selectBoardList(page, 10);
+	}
+	public ArrayList<BoardDTO> selectBoardList(int page, int list_num) {
 		ArrayList<BoardDTO> aList = new ArrayList<BoardDTO>();
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(BOARD_LIST);
+			pstmt.setInt(1, page*10);
+			pstmt.setInt(2, list_num);
+			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				BoardDTO dto = new BoardDTO();
