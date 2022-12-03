@@ -17,7 +17,6 @@ public class BoardAction implements Action {
 			request.setAttribute("boardList", dao.selectBoardList());
 		}
 		
-		
 		return "board";
 	}
 }

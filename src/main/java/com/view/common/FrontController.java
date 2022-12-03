@@ -58,6 +58,8 @@ public class FrontController extends HttpServlet {
 		Action action = null;
 		String viewPage = null;
 		Boolean isAdminPage = false;
+		Boolean isForward = true;
+		
 		System.out.println(requestURI);
 		System.out.println(contextPath);
 		System.out.println(page);
@@ -92,6 +94,7 @@ public class FrontController extends HttpServlet {
 		} else if (page.equals("/postEditorProcess.do")) {
 			action = new BoardPostEditorAction();
 			viewPage = action.execute(request, response);
+			isForward = false;
 		} else if (page.equals("/post.do")) {
 			action = new BoardPostAction();
 			viewPage = action.execute(request, response);
@@ -146,10 +149,12 @@ public class FrontController extends HttpServlet {
 			action = new AdminUserUpdateProcAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
+			isForward = false;
 		} else if (page.equals("/admin/userDeleteProc.do")) {
 			action = new AdminUserDeleteProcAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
+			isForward = false;
 		} else if (page.equals("/admin/bookProc.do")) {
 			action = new AdminBookProcAction();
 			viewPage = action.execute(request, response);
@@ -161,12 +166,20 @@ public class FrontController extends HttpServlet {
 		
 		
 		request.setAttribute("page", viewPage);
-		if (!isAdminPage) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-			dispatcher.forward(request, response);
+		if (isForward) {
+			if (isAdminPage) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/index.jsp");
+				dispatcher.forward(request, response);
+			} else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+				dispatcher.forward(request, response);
+			}
 		} else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/index.jsp");
-			dispatcher.forward(request, response);
+			if (isAdminPage) {
+				response.sendRedirect(request.getContextPath() + "/admin/" + viewPage + ".do");
+			} else {
+				response.sendRedirect(request.getContextPath() + "/" + viewPage + ".do");
+			}
 		}
 	}
 }

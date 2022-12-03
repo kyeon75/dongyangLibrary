@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<table>
-	<tr> 
-		<td align="center" bgcolor="#FFFFCC">
-			<table>
-				<form method="post">
-					<tr> 
+<form method="post">
+	<table>
+		<tr> 
+			<td align="center" bgcolor="#FFFFCC">
+				<table>
+					<tr>
 						<td colspan="3"><font color="#111111"><b>회원님의 정보를 수정합니다.</b></font></td>
 					</tr>
 					<tr> 
@@ -60,8 +60,8 @@
 							<input type="reset" value="다시쓰기">
 						</td>
 					</tr>
-				</form>
-			</table>
-		</td>
-	</tr>
-</table>
+				</table>
+			</td>
+		</tr>
+	</table>
+</form>

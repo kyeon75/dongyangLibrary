@@ -24,7 +24,7 @@ public class BoardPostEditorAction implements Action {
 		dto.setBoard_title(title);
 		dto.setBoard_content(content);
 		dto.setUser_id((String)session.getAttribute("id"));
-		
+
 		BoardDAO dao = new BoardDAO();
 		if (dao.insertBoard(dto)) {
 			request.setAttribute("alert", "게시판 작성에 성공하셨습니다.");
