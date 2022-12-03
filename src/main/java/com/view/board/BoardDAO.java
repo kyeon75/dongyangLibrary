@@ -10,27 +10,22 @@ import com.dm.common.JDBCutil;
 import com.view.user.UserDTO;
 
 public class BoardDAO {
-	final String USER_INSERT="insert into boardtbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
-	final String USER_LIST="select * from usertbl;";
-	final String USER_SELECT_ID = "select * from usertbl where user_id= ?;";
+	final String BOARD_INSERT="insert into boardtbl(board_title, board_content, user_id) values(?, ?, ?);";
+	final String BOARD_LIST="select * from boardtbl order by board_id desc LIMIT ?, ?;";
+	final String BOARD_SELECT_ID = "select * from boardtbl where board_id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
 	
-	public boolean insertUser(UserDTO mem) {
+	//insert into boardtbl(board_title, board_content, user_id) values("dsdsa","saddada","tjdalstjdals100");
+	public boolean insertBoard(BoardDTO dto) {
 		boolean result = false;
 		try {
 			conn=JDBCutil.getConnection();
-			pstmt = conn.prepareStatement(USER_INSERT);
-			pstmt.setString(1, mem.getId());
-			pstmt.setString(2, mem.getPassword());
-			pstmt.setString(3, mem.getName());
-			pstmt.setString(4, mem.getEmail());
-			pstmt.setString(5, mem.getMobileNumber());
-			pstmt.setString(6, mem.getBaseAddress());
-			pstmt.setString(7, mem.getSubAddress());
-			pstmt.setString(8, mem.getGender());
-			pstmt.setString(9, mem.getBirth());
+			pstmt = conn.prepareStatement(BOARD_INSERT);
+			pstmt.setString(1, dto.getBoard_title());
+			pstmt.setString(2, dto.getBoard_content());
+			pstmt.setString(3, dto.getUser_id());
 			pstmt.executeUpdate();
 			result = true;
 		} catch (Exception e) {
@@ -41,33 +36,52 @@ public class BoardDAO {
 		}
 		return result;
 	}
-	private UserDTO resultToDTO(ResultSet rs) {
-		UserDTO rd=new UserDTO();
-		try {
-			rd.setId(rs.getString("user_id"));
-			rd.setPassword(rs.getString("password"));
-			rd.setName(rs.getString("name"));
-			rd.setEmail(rs.getString("email"));
-			rd.setMobileNumber(rs.getString("mobile_number"));
-			rd.setBaseAddress(rs.getString("base_address"));
-			rd.setSubAddress(rs.getString("sub_address"));
-			rd.setGender(rs.getString("gender"));
-			rd.setBirth(rs.getString("birth"));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return rd;
+	public ArrayList<BoardDTO> selectBoardList() {
+		return selectBoardList(0, 10);
 	}
-	public UserDTO selectUserId(String id) {
-		UserDTO dto = new UserDTO();
+	public ArrayList<BoardDTO> selectBoardList(int page) {
+		return selectBoardList(page, 10);
+	}
+	public ArrayList<BoardDTO> selectBoardList(int page, int list_num) {
+		ArrayList<BoardDTO> aList = new ArrayList<BoardDTO>();
 		try {
 			conn=JDBCutil.getConnection();
-			pstmt = conn.prepareStatement(USER_SELECT_ID);
+			pstmt = conn.prepareStatement(BOARD_LIST);
+			pstmt.setInt(1, page*10);
+			pstmt.setInt(2, list_num);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardDTO dto = new BoardDTO();
+				dto.setBoard_id(rs.getInt("board_id"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_content(rs.getString("board_content"));
+				dto.setUser_id(rs.getString("user_id"));
+				dto.setPostdate(rs.getString("postdate"));
+				dto.setVisitcount(rs.getInt("visitcount"));
+				aList.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		return aList;
+	}
+	public BoardDTO selectBoardId(String id) {
+		BoardDTO dto = new BoardDTO();
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_SELECT_ID);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				dto = resultToDTO(rs);
-				return dto;
+				dto.setBoard_id(rs.getInt("board_id"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_content(rs.getString("board_content"));
+				dto.setUser_id(rs.getString("user_id"));
+				dto.setPostdate(rs.getString("postdate"));
+				dto.setVisitcount(rs.getInt("visitcount"));
 			} else {
 				return null;
 			}
@@ -76,32 +90,6 @@ public class BoardDAO {
 		} finally {
 			JDBCutil.close(rs, pstmt, conn);
 		}
-		return null;
-	}
-	public ArrayList<UserDTO> selectMemberList(){
-		ArrayList<UserDTO> aList = new ArrayList<UserDTO>();
-		try {
-			conn=JDBCutil.getConnection();
-			pstmt = conn.prepareStatement(USER_LIST);
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				UserDTO rd=new UserDTO();
-				rd.setId(rs.getString("id"));
-				rd.setPassword(rs.getString("password"));
-				rd.setName(rs.getString("name"));
-				rd.setEmail(rs.getString("email"));
-				rd.setMobileNumber(rs.getString("mobile_number"));
-				rd.setBaseAddress(rs.getString("base_address"));
-				rd.setSubAddress(rs.getString("sub_address"));
-				rd.setGender(rs.getString("gender"));
-				rd.setBirth(rs.getString("birth"));
-				aList.add(rd);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			JDBCutil.close(rs, pstmt, conn);
-		}
-		return aList;
+		return dto;
 	}
 }

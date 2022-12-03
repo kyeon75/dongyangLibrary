@@ -14,7 +14,7 @@
 	</div>
 	
 	<h1 class="search_title"><%= title %></h1>
-	<hr>
+	
 	
 	<ul id="book_search_list">	
 		<jsp:include page="../module/searchBookItem.jsp">
@@ -23,5 +23,6 @@
 		
 	</ul>
 	
+	<hr>
 	
 </section>

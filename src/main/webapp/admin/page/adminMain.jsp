@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	board
+<jsp:include page="../module/adminHeader.jsp"></jsp:include>
+
+관리자 홈
+
 </body>
 </html>

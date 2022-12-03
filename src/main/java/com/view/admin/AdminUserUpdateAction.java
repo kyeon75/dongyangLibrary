@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.view.common.Action;
 
-public class AdminBookAction implements Action {
+public class AdminUserUpdateAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "bookMgr";
+		return "userUpdate";
 		
 	}
 
