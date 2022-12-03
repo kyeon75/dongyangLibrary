@@ -31,10 +31,8 @@
 table, td, tr{
 	padding: 10px 10px;
 	border : 1px solid black;
-}
-
-.myinfo_order_table{
 	margin-top: 100px;
 	margin-left: 250px;
 	margin-bottom: 200px;
 }
+
