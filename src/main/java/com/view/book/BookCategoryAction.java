@@ -28,7 +28,7 @@ public class BookCategoryAction implements Action {
 			field +="인문";
 		}else if(cate.equals("his")) {
 			field +="역사";
-		}else if(cate.equals("예술")) {
+		}else if(cate.equals("art")) {
 			field+="예술";
 		}
 		
