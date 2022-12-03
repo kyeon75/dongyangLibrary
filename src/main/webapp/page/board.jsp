@@ -45,4 +45,14 @@
 	<button class="board_next_button"> 다음 </button>
 		
 	<a href="${pageContext.request.contextPath}/postEditor.do"><button class="board_post_button">글 작성</button></a>
+	
+	<br><br><br><br><br><br><br><br>
+	
+	<form id="board_form" action="#" method="post">
+  		<div id="board_input_wrapper">
+    		<input id="board_input" type="search" placeholder="search">
+ 		</div>
+  		<input id="board_submit" type="submit" value="&#128269;"/>
+	</form>
+	
 </section>

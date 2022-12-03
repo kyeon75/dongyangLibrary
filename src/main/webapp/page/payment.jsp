@@ -46,7 +46,6 @@
 	</ul>
 	
 	
-	
 	<h1 class="payment_user_h1"> 배송 정보 </h1>
 	
 	<div class="payment_user_info_radio">
@@ -70,10 +69,9 @@
 		</li>
 	</ul>
 	
-	
-	
+	<hr>
+	<br><br><br><br>
 	<h2 class="payment_user_h2"> 주문 도서 </h2>
-	<br>
 	
 	<ul class="payment_cart_list">
 		<jsp:include page="../module/bookcartItem.jsp">

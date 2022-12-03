@@ -72,3 +72,10 @@
 	padding: 10px 20px;
 	float: right;
 }
+
+
+
+#board_input_wrapper{
+	float: left;
+	margin-left: 470px;	
+}
