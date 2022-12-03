@@ -1,17 +1,23 @@
-package com.dm.common;
+package com.view.board;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class RegisterDAO {
-	final String USER_INSERT="insert into usertbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+import com.dm.common.JDBCutil;
+import com.view.user.UserDTO;
+
+public class BoardDAO {
+	final String USER_INSERT="insert into boardtbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	final String USER_LIST="select * from usertbl;";
 	final String USER_SELECT_ID = "select * from usertbl where user_id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
 	
-	public boolean insertUser(RegisterDTO mem) {
+	public boolean insertUser(UserDTO mem) {
 		boolean result = false;
 		try {
 			conn=JDBCutil.getConnection();
@@ -35,8 +41,8 @@ public class RegisterDAO {
 		}
 		return result;
 	}
-	private RegisterDTO resultToDTO(ResultSet rs) {
-		RegisterDTO rd=new RegisterDTO();
+	private UserDTO resultToDTO(ResultSet rs) {
+		UserDTO rd=new UserDTO();
 		try {
 			rd.setId(rs.getString("user_id"));
 			rd.setPassword(rs.getString("password"));
@@ -52,8 +58,8 @@ public class RegisterDAO {
 		}
 		return rd;
 	}
-	public RegisterDTO selectUserId(String id) {
-		RegisterDTO dto = new RegisterDTO();
+	public UserDTO selectUserId(String id) {
+		UserDTO dto = new UserDTO();
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_SELECT_ID);
@@ -72,14 +78,14 @@ public class RegisterDAO {
 		}
 		return null;
 	}
-	public ArrayList<RegisterDTO> selectMemberList(){
-		ArrayList<RegisterDTO> aList = new ArrayList<RegisterDTO>();
+	public ArrayList<UserDTO> selectMemberList(){
+		ArrayList<UserDTO> aList = new ArrayList<UserDTO>();
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_LIST);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				RegisterDTO rd=new RegisterDTO();
+				UserDTO rd=new UserDTO();
 				rd.setId(rs.getString("id"));
 				rd.setPassword(rs.getString("password"));
 				rd.setName(rs.getString("name"));

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.dm.common.RegisterDTO"%>
+    pageEncoding="UTF-8" import="com.view.user.UserDTO"%>
 
 <%
-	RegisterDTO dto = (RegisterDTO)request.getAttribute("myInfo");
+	UserDTO dto = (UserDTO)request.getAttribute("myInfo");
 	String title = (String)request.getAttribute("title");
 %>
 

@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dm.common.RegisterDAO;
-import com.dm.common.RegisterDTO;
-
 @WebServlet("/SignUpCheck")
 public class SignUpCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,8 +15,8 @@ public class SignUpCheck extends HttpServlet {
 		
 		String id = request.getParameter("id");
 
-		RegisterDAO dao = new RegisterDAO();
-		RegisterDTO dto = new RegisterDTO();
+		UserDAO dao = new UserDAO();
+		UserDTO dto = new UserDTO();
 		
 		//id email 각각 dao로 중복 검사, 중복안되면 null 중복 안되면 dto 반환
 		dto = dao.selectUserId(id);

@@ -4,7 +4,7 @@
 	<div class="css-1bb6q2p etkckst2">
 	    <div class="css-a7gihu etkckst1">로그인</div>
 	    <div class="css-10zt1af etkckst0">
-	        <form action="${pageContext.request.contextPath}/user/loginProcess" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
+	        <form action="${pageContext.request.contextPath}/loginProcess.do" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
 	            <div class="css-46b038 e18ap6t76">
 	                <div class="css-1accgqb e1uzxhvi6">
 	                    <div class="css-176lya2 e1uzxhvi3">

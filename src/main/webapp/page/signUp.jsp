@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <section id="signUpContainer" class="container">
 	<h3 id="title">회원가입</h3>
-	<form class="css-mhmtvt e15so55l1" action="${pageContext.request.contextPath}/user/signUpProcess" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
+	<form class="css-mhmtvt e15so55l1" action="${pageContext.request.contextPath}/signUpProcess.do" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
 		<div class="css-rb0i47 e1yyjjij1">
 			<span class="css-qq9ke6 e1yyjjij0">
 				*

@@ -4,8 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dm.common.RegisterDAO;
-import com.dm.common.RegisterDTO;
+import com.view.common.Action;
 
 public class MyInfoAction implements Action {
        
@@ -15,8 +14,8 @@ public class MyInfoAction implements Action {
 		
 		request.setAttribute("title", "마이페이지");
 		String id = (String)session.getAttribute("id");
-		RegisterDAO dao = new RegisterDAO();
-		RegisterDTO dto = null;
+		UserDAO dao = new UserDAO();
+		UserDTO dto = null;
 		if (id == null || (dto = dao.selectUserId(id)) == null) {
 			System.out.println(id);
 			return "login";

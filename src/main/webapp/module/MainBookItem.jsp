@@ -9,7 +9,7 @@
 	<h1 class="mainItemTitle"><%= title %></h1>
 	<ul class="bookItemBox">
 		<li>
-			<a href="${pageContext.request.contextPath}/book/book"> <img class="bookImg" src="${pageContext.request.contextPath}/resources/img/book1.jpg"> </a>
+			<a href="${pageContext.request.contextPath}/book.do"> <img class="bookImg" src="${pageContext.request.contextPath}/resources/img/book1.jpg"> </a>
 			<h5 class="bookName">책이름</h5>
 			<div class="bookDescription">
 				<div class="bookAuthor">저자 출판사</div>

@@ -8,8 +8,7 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dm.common.RegisterDAO;
-import com.dm.common.RegisterDTO;
+import com.view.common.Action;
 
 public class SignUpAction implements Action {
 	@Override
@@ -52,7 +51,7 @@ public class SignUpAction implements Action {
   	  	}
         
   	  	//회원가입 폼을 통해 받아온 데이터를 dto에 넣음
-        RegisterDTO dto = new RegisterDTO();
+        UserDTO dto = new UserDTO();
         dto.setId(paramMap.get("id"));
         dto.setPassword(paramMap.get("password"));
         dto.setName(paramMap.get("name"));
@@ -65,7 +64,7 @@ public class SignUpAction implements Action {
 		
 		
 		//회원가입 dao를 실행함, dao.insertUser(dto)가 성공하면 dto객체를 반환하고, 실패하면 null을 반환함
-		RegisterDAO dao = new RegisterDAO();
+		UserDAO dao = new UserDAO();
 		if (dao.insertUser(dto)) {
 			request.setAttribute("alert", "회원가입에 성공했습니다.");
 		} else {

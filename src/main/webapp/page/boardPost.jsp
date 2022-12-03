@@ -59,7 +59,7 @@
 	</ul>
 	
 	
-	<a href="${pageContext.request.contextPath}/board/board"><button class="board_post_list_button"> 글 목록 </button></a>
+	<a href="${pageContext.request.contextPath}/board.do"><button class="board_post_list_button"> 글 목록 </button></a>
 
 </section>
 </body>

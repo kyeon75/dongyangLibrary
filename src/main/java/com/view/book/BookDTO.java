@@ -14,6 +14,7 @@ public class BookDTO {
 	private int tday_buy;
 	private String category;
 	private int score;
+	private String writer;
 	
 	public String getBook_id() {
 		return book_id;
@@ -80,6 +81,12 @@ public class BookDTO {
 	}
 	public void setScore(int score) {
 		this.score = score;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	
 	
