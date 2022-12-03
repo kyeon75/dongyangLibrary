@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.view.admin.AdminBoardAction;
 import com.view.admin.AdminBookAction;
 import com.view.admin.AdminBookInsertAction;
@@ -24,6 +23,7 @@ import com.view.board.BoardPostEditorAction;
 import com.view.book.BestBookListAction;
 import com.view.book.BookCategoryAction;
 import com.view.book.BookListAction;
+import com.view.book.BookSearchAction;
 import com.view.book.DiscountBookListAction;
 import com.view.book.HotBookListAction;
 import com.view.book.MainAction;
@@ -113,7 +113,10 @@ public class FrontController extends HttpServlet {
 		} else if (page.equals("/category.do")) {
 			action = new BookCategoryAction();
 			viewPage = action.execute(request, response);
-		} else if (page.equals("/admin.do")) {
+		}else if (page.equals("/search.do")){
+			action = new BookSearchAction();
+			viewPage = action.execute(request, response);
+		}else if (page.equals("/admin.do")) {
 			action = new AdminBoardAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;

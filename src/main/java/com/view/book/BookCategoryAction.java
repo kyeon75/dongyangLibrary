@@ -11,8 +11,6 @@ public class BookCategoryAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		
-		
 		String cate = (String)request.getParameter("category");
 		String field = "";
 		
