@@ -22,11 +22,12 @@ a {text-decoration-line : none;}
  <ul id="a1">
  	<li><a href="#">카테고리</a>
  		<ul id="a2">
- 			<li><a href="#">과학</a>
- 			<li><a href="#">경제/경영</a>
- 			<li><a href="#">예술</a>
- 			<li><a href="#">인문</a>
- 			<li><a href="#">문학</a> 			
+ 			<li><a href="${pageContext.request.contextPath}/category.do?category=nov">소설</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/category.do?category=hum">인문</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/category.do?category=art">예술</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/category.do?category=del">종교</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/category.do?category=soc">사회</a></li>
+ 			<li><a href="${pageContext.request.contextPath}/category.do?category=sci">과학</a></li> 					
  		</ul>
  </ul>
   
