@@ -17,3 +17,24 @@
 	margin-left: 20px;
 	padding: 20px 50px;
 }
+
+.myinfo_h1{
+	font-weight: bold;
+	font-size: 25px;
+	float: left;
+	margin-top: 100px;
+	margin-left: 250px;
+	margin-bottom: 50px;
+	width: 1000px;
+}
+
+table, td, tr{
+	padding: 10px 10px;
+	border : 1px solid black;
+}
+
+.myinfo_order_table{
+	margin-top: 100px;
+	margin-left: 250px;
+	margin-bottom: 200px;
+}
