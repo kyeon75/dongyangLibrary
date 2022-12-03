@@ -14,15 +14,15 @@
 	<br><br>
 	
 	<div class="book_image">
-		<img src="${pageContext.request.contextPath}/resources/img/${dto.img_src}" >
+		<img src="${pageContext.request.contextPath}/resources/img/${img_src}" >
 	</div>
 
 	<div class="book_info">
 		<br><br>
-		<h1 class="book_name"> ${dto.book_title } </h1> <br><br>
-		<h1> ${dto.writer} </h1> <br>
-		<h1> ${dto.score } </h1> <br>
-		<h1> ${dto.price } </h1> <br><br><br>
+		<h1 class="book_name"> ${title } </h1> <br><br>
+		<h1> ${writer} </h1> <br>
+		<h1> ${score } </h1> <br>
+		<h1> ${price } </h1> <br><br><br>
 		
 		<div class="book_count">
 			<input type="button" class="book_buy_quantity_botton" onclick='count("plus")' value="+"/> <br><br>
@@ -33,7 +33,7 @@
 		
 	<div class="book_buy">
 		<h1 class="book_full_price"> 총 도서 금액 </h1> <br>
-		<h1 class="book_full_price">${dto.price }</h1> <br><br><br>
+		<h1 class="book_full_price">${ price }</h1> <br><br><br>
 		<button class="book_cart_button" type="button" onclick=""> 장바구니 담기 </button> <br><br>
 		<button class="book_payment_button" type="button"> 바로 구매하기 </button>
 	</div>
@@ -42,7 +42,7 @@
 	<hr>
 	<div class="book_explain">
 		<h2>책 소개</h2> <br>
-		<p> ${dto.description}
+		<p> ${description}
 		</p>
 		<br>
 	</div>

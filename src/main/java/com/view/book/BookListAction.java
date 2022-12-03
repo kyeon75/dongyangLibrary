@@ -17,7 +17,11 @@ public class BookListAction implements Action {
 		
 		dto = dao.selectBook(id);
 		
-		request.setAttribute("dto", dto);
+		request.setAttribute("title", dto.getBook_title());
+		request.setAttribute("writer", dto.getWriter());
+		request.setAttribute("price", dto.getPrice());
+		request.setAttribute("description", dto.getDescription());
+		request.setAttribute("score", dto.getScore());
 
 		return "book";
 	}

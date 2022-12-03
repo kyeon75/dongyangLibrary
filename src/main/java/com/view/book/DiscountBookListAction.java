@@ -17,7 +17,6 @@ public class DiscountBookListAction implements Action {
 		List<BookDTO> bLists = dao.selectBookPage("discount");
 		request.setAttribute("bLists", bLists);
 		
-		
 		return "search";
 	}
 
