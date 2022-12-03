@@ -17,14 +17,14 @@ public class SignUpAction implements Action {
         Map<String, String[]> map = request.getParameterMap();
         Map<String, String> paramMap = new HashMap<String, String>();
         
-        //회원가입 폼을 통해 받아온 데이터들을 참조하기 좋게 컬랙션에 넣음, 만약 null 값이 오면 경고문구를 띄우고 종료함
+        //회원가입 폼을 통해 받아온 데이터들을 참조하기 좋게 컬랙션에 넣음, 만약 빈문자열이 오면 경고문구를 띄우고 메인화면으로 이동
         for(String key : map.keySet()) {
-        	if (map.get(key) != null) {
-            	String tmp = Arrays.toString(map.get(key));
-            	tmp = tmp.substring(1, tmp.length()-1);
-            	paramMap.put(key, tmp);
+        	String tmp = Arrays.toString(map.get(key));
+        	tmp = tmp.substring(1, tmp.length()-1); // Array를 String으로 바꾼것이기 때문에 [value] 형식에서 앞뒤로 한 칸씩 짤라냄
+        	if (!tmp.isEmpty()) {
+        		paramMap.put(key, tmp);
         	} else {
-      	  		request.setAttribute("alert", "회원가입에 실패했습니다.");
+        		request.setAttribute("alert", "회원가입에 실패했습니다.");
       	  		return "main";
         	}
         }

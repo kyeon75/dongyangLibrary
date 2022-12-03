@@ -148,6 +148,8 @@ public class FrontController extends HttpServlet {
 			action = new AdminBookProcAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
+		} else if (page.equals("/index.do")) {
+			
 		}
 		
 		

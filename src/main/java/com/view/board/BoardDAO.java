@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.dm.common.JDBCutil;
-import com.view.user.UserDTO;
 
 public class BoardDAO {
 	final String BOARD_INSERT="insert into boardtbl(board_title, board_content, user_id) values(?, ?, ?);";
@@ -17,7 +16,6 @@ public class BoardDAO {
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
 	
-	//insert into boardtbl(board_title, board_content, user_id) values("dsdsa","saddada","tjdalstjdals100");
 	public boolean insertBoard(BoardDTO dto) {
 		boolean result = false;
 		try {

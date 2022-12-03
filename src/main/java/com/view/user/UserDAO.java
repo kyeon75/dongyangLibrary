@@ -8,7 +8,7 @@ import com.dm.common.JDBCutil;
 public class UserDAO {
 	final String USER_INSERT="insert into usertbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	final String USER_LIST="select * from usertbl;";
-	final String USER_SELECT_ID = "select * from usertbl where user_id= ?;";
+	final String USER_SELECT_ID="select * from usertbl where user_id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
@@ -37,6 +37,25 @@ public class UserDAO {
 		}
 		return result;
 	}
+	public boolean updateUser(String feild, String value, String user_id){
+		boolean result = false;
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement(updateString(feild, value, user_id));
+			pstmt.executeUpdate();
+			result = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result = false;
+		} finally {
+			JDBCutil.close(pstmt, conn);
+		}
+		return result;
+	}
+	private String updateString(String feild, String value, String user_id) {
+		return "update usertbl set " + feild + " = '" + value + "' where user_id = '" + user_id + "'; ";
+	}
+	
 	private UserDTO resultToDTO(ResultSet rs) {
 		UserDTO rd=new UserDTO();
 		try {
@@ -82,7 +101,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				UserDTO rd=new UserDTO();
-				rd.setId(rs.getString("id"));
+				rd.setId(rs.getString("user_id"));
 				rd.setPassword(rs.getString("password"));
 				rd.setName(rs.getString("name"));
 				rd.setEmail(rs.getString("email"));
