@@ -30,26 +30,19 @@
 	<br>
 	<hr>
 	
-	<ul>
-		<li>
-			<div class="board_post_comment_user">
-				댓글 작성자
-			</div>
-			
-			<div class="board_post_comment_content">
-				댓글 내용
-			</div>
-			
-			<div class="board_post_comment_date">
-				작성 날짜
-			</div>
-			<hr>
-		</li>
+	<ul class="board_post_comment_list">
+	
+		<jsp:include page="/module/boardPostCommentItem.jsp">
+			<jsp:param value="@@" name="title"/>
+		</jsp:include>
+		
 	</ul>
 	
-	
+	<br><br>
 	<a href="${pageContext.request.contextPath}/board.do"><button class="board_post_list_button"> 글 목록 </button></a>
-
+	<button class="board_post_list_button"> 글 수정 </button>
+	<button class="board_post_list_button"> 글 삭제 </button>
+	
 </section>
 </body>
 </html>

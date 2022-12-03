@@ -12,6 +12,10 @@
 	font-size: 15px;
 }
 
+.board_post_comment_list{
+	width: 1200px;	
+}
+
 .board_post_user{
 	float:left;
 	margin-right: 100px;
@@ -19,18 +23,22 @@
 
 .board_post_comment_user{
 	float: left;
-	margin-right: 100px;
+	width: 200px;
 }
 
 .board_post_comment_content{
+	width: 780px;
 	float: left;
+	
 }
 
 .board_post_comment_date{
+	width: 220px;
 	float: right;
 }
 
 .board_post_list_button{
 	float: right;
 	padding: 10px 40px;
+	margin-left: 20px;
 }
