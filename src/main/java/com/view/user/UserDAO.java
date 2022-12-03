@@ -9,6 +9,7 @@ public class UserDAO {
 	final String USER_INSERT="insert into usertbl values(?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	final String USER_LIST="select * from usertbl;";
 	final String USER_SELECT_ID="select * from usertbl where user_id= ?;";
+	final String USER_DELETE="delete from usertbl where user_id= ?;";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
@@ -37,11 +38,12 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
 	public boolean updateUser(String feild, String value, String user_id){
 		boolean result = false;
 		try {
 			conn=JDBCutil.getConnection();
-			pstmt = conn.prepareStatement(updateString(feild, value, user_id));
+			pstmt = conn.prepareStatement(MakeUpdateSql(feild, value, user_id));
 			pstmt.executeUpdate();
 			result = true;
 		} catch (SQLException e) {
@@ -52,8 +54,25 @@ public class UserDAO {
 		}
 		return result;
 	}
-	private String updateString(String feild, String value, String user_id) {
+	private String MakeUpdateSql(String feild, String value, String user_id) {
 		return "update usertbl set " + feild + " = '" + value + "' where user_id = '" + user_id + "'; ";
+	}
+	
+	public boolean deleteUser(String user_id) {
+		boolean result = false;
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement(USER_DELETE);
+			pstmt.setString(1, user_id);
+			pstmt.executeUpdate();
+			result = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			result = false;
+		} finally {
+			JDBCutil.close(pstmt, conn);
+		}
+		return result;
 	}
 	
 	private UserDTO resultToDTO(ResultSet rs) {

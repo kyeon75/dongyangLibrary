@@ -38,7 +38,7 @@ public class AdminUserUpdateProcAction implements Action {
         		}
         	}
         }
-        
+        request.setAttribute("alert", "회원 수정 성공");
 		return "userMgr";
 	}
 }
