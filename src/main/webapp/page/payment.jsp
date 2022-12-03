@@ -21,7 +21,7 @@
 	<h1 class="payment_user_h1"> 주문자 정보 </h1>
 	
 	<div class="payment_user_info_radio">
-		<input type="radio"  name="chk_info" value="">회원 정보 가져오기
+		<input type="checkbox"  name="chk_info" value="">회원 정보 가져오기
 	</div> <br><br>
 	
 	<jsp:include page="../module/paymentPaymentItem.jsp">
@@ -49,7 +49,7 @@
 	<h1 class="payment_user_h1"> 배송 정보 </h1>
 	
 	<div class="payment_user_info_radio">
-		<input type="radio"  name="chk_info" value="">회원 정보 가져오기
+		<input type="checkbox"  name="chk_info" value="">회원 정보 가져오기
 	</div> <br><br>
 	
 	<ul class="payment_info_list">
