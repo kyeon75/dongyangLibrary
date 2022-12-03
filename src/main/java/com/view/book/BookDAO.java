@@ -65,6 +65,8 @@ public class BookDAO {
 		}catch (Exception e) {
 			System.out.println("검색할때 오류");
 			e.printStackTrace();
+		}finally {
+			JDBCutil.close(rs, pstmt, conn);
 		}
 		
 		
@@ -120,25 +122,27 @@ public class BookDAO {
 	public BookDTO selectBook(String id) {
 		BookDTO dto = new BookDTO();
 		
-		String query = "select *from booktbl where book_id=?";
-		
+		String query = "select * from booktbl where book_id= ?;";
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, id);
-			rs = pstmt.executeQuery(query);
-			rs.next();
-			dto.setBook_id(rs.getString("book_id"));//책아이디
-			dto.setWriter(rs.getString("writer"));//작가
-			dto.setImg_src(rs.getString("img_src"));//도서이미지
-			dto.setBook_title(rs.getString("book_title"));//도서제목
-			dto.setPrice(rs.getInt("price"));//도서가격
-			dto.setDescription(rs.getString("description"));//도서줄거리
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto.setBook_id(rs.getString("book_id"));//책아이디
+				dto.setWriter(rs.getString("writer"));//작가
+				dto.setImg_src(rs.getString("img_src"));//도서이미지
+				dto.setBook_title(rs.getString("book_title"));//도서제목
+				dto.setPrice(rs.getInt("price"));//도서가격
+				dto.setDescription(rs.getString("description"));//도서줄거리
+			}else {
+				return null;
+			}
 			
 			System.out.println("불러와졌다.." + id);
 			
 		}catch (Exception e) {
-			System.out.println("검색할때 오류");
+			System.out.println("id검색할때 오류");
 			e.printStackTrace();
 		}
 		
