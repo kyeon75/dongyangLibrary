@@ -24,11 +24,11 @@
 				<img id="logo" src="${pageContext.request.contextPath}/resources/img/logo.png" alt="logo">
 			</a>
 		</h1>
-<form id="search_form" action="#" method="post">
+<form id="search_form" action="${pageContext.request.contextPath}/search.do" method="post">
   <div id="input-wrapper">
-    <input id="search_input" type="search" placeholder="search">
+    <input id="search_input" type="search" placeholder="search" name="searchWord">
   </div>
-  <input id="search_submit" type="submit" value="&#128269;"/>
+  <input id="search_submit" type="submit"/>
 </form>
 		<ul>
 			<li><a href="${pageContext.request.contextPath}/bookcart.do"><img src="${pageContext.request.contextPath}/resources/img/cart.png" alt="" ></a></li>
