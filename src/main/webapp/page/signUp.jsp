@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <section id="signUpContainer" class="container">
 	<h3 id="title">회원가입</h3>
-	<form class="css-mhmtvt e15so55l1" action="${pageContext.request.contextPath}/signUpProcess.do" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
+	<form class="css-mhmtvt e15so55l1" id="signUpForm"action="${pageContext.request.contextPath}/signUpProcess.do" method="post" onkeydown="return event.key != 'Enter';">
 		<div class="css-rb0i47 e1yyjjij1">
 			<span class="css-qq9ke6 e1yyjjij0">
 				*
@@ -225,7 +225,7 @@
 		<div class="css-1eo0fey e1j7jtti0">
 		</div>
 		<div class="css-137ca2h e1utgeno0">
-			<button class="css-18m884r e4nu7ef3" type="submit">
+			<button class="css-18m884r e4nu7ef3" type="button" onclick="checkForm();">
 				<span class="css-ymwvow e4nu7ef1">
 					가입하기
 				</span>
@@ -234,6 +234,7 @@
 	</form>
 </section>
 <script>
+	let signUpForm = document.getElementById("signUpForm");
 	let id = document.getElementById("id");
 	let password = document.getElementById("password");
 	let passwordConfirm = document.getElementById("passwordConfirm");
@@ -354,7 +355,7 @@
 			alert("생년월일 형식이 맞지 않습니다.")
 			return false
 		} else {
-			return true
+			signUpForm.submit();
 		}
 	}
 	//이메일 유효성 검사
