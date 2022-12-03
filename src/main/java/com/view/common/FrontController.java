@@ -15,6 +15,7 @@ import com.view.admin.AdminBookInsertAction;
 import com.view.admin.AdminBookProcAction;
 import com.view.admin.AdminOrderAction;
 import com.view.admin.AdminUserAction;
+import com.view.admin.AdminUserDeleteProcAction;
 import com.view.admin.AdminUserUpdateAction;
 import com.view.admin.AdminUserUpdateProcAction;
 import com.view.board.BoardAction;
@@ -24,6 +25,7 @@ import com.view.book.BestBookListAction;
 import com.view.book.BookListAction;
 import com.view.book.DiscountBookListAction;
 import com.view.book.HotBookListAction;
+import com.view.book.MainAction;
 import com.view.buy.BookCartAction;
 import com.view.buy.PaymentAction;
 import com.view.user.LoginAction;
@@ -140,14 +142,18 @@ public class FrontController extends HttpServlet {
 			action = new AdminUserUpdateProcAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
+		} else if (page.equals("/admin/userDeleteProc.do")) {
+			action = new AdminUserDeleteProcAction();
+			viewPage = action.execute(request, response);
+			isAdminPage = true;
 		} else if (page.equals("/admin/bookProc.do")) {
 			action = new AdminBookProcAction();
 			viewPage = action.execute(request, response);
 			isAdminPage = true;
 		} else if (page.equals("/index.do")) {
-			
+			action = new MainAction();
+			viewPage = action.execute(request, response);
 		}
-		
 		
 		
 		request.setAttribute("page", viewPage);

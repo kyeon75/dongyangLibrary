@@ -4,7 +4,7 @@
 	<tr> 
 		<td align="center" bgcolor="#FFFFCC">
 			<table>
-				<form method="post" action="${pageContext.request.contextPath}/admin/userUpdateProc.do">
+				<form method="post">
 					<tr> 
 						<td colspan="3"><font color="#111111"><b>회원님의 정보를 수정합니다.</b></font></td>
 					</tr>
@@ -54,7 +54,11 @@
 						<td><input type="text" name="birth" size="15" placeholder="0000-00-00"></td>
 					</tr>
 					<tr> 
-						<td colspan="2" align="center"><input type="submit" value="수정완료"><input type="reset" value="다시쓰기"></td>
+						<td colspan="3" align="center">
+							<input type="submit" value="수정완료" formaction="${pageContext.request.contextPath}/admin/userUpdateProc.do">
+							<input type="submit" value="삭제" formaction="${pageContext.request.contextPath}/admin/userDeleteProc.do">
+							<input type="reset" value="다시쓰기">
+						</td>
 					</tr>
 				</form>
 			</table>

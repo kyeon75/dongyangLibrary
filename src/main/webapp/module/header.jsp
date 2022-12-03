@@ -20,7 +20,7 @@
 	</div>
 	<div id="gnb_mid" class="container">
 		<h1 id="logo_box">
-			<a href="${pageContext.request.contextPath}">
+			<a href="${pageContext.request.contextPath}/index.do">
 				<img id="logo" src="${pageContext.request.contextPath}/resources/img/logo.png" alt="logo">
 			</a>
 		</h1>
