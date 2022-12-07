@@ -180,4 +180,49 @@ public class BookDAO {
 		return bList;
 		
 	}
+	
+	public List<BookDTO> selectBookMainPage(String standard) {
+		List<BookDTO> bList = new Vector<BookDTO>();
+		
+		String query = "select * from booktbl  where " + standard + 
+				" is not null order by " + standard + " desc limit 4";
+		
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement(query);
+			
+			
+			rs = pstmt.executeQuery();
+			
+			
+			
+			while(rs.next()) {
+				BookDTO dto = new BookDTO();
+				dto.setBook_id(rs.getString("book_id"));//도서번호
+				dto.setImg_src(rs.getString("img_src"));//도서이미지
+				dto.setBook_title(rs.getString("book_title"));//도서제목
+				dto.setWriter(rs.getString("writer"));//저자
+				dto.setPublisher(rs.getString("publisher"));//출판사
+				
+				
+				bList.add(dto);
+				
+			}
+			
+			System.out.println("메인 dto에 넣기 성공!!");
+			
+		}catch (Exception e) {
+			System.out.println("메인검색할때 오류");
+			e.printStackTrace();
+		}finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		
+		
+		return bList;
+		
+		
+		
+		
+	}
 }

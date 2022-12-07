@@ -165,7 +165,7 @@ public class FrontController extends HttpServlet {
 		} else if (page.equals("/index.do")) {
 			action = new MainAction();
 			viewPage = action.execute(request, response);
-		}
+		} 
 		
 		
 		request.setAttribute("page", viewPage);
