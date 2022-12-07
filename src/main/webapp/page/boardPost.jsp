@@ -40,9 +40,20 @@
 	
 	<br><br>
 	<a href="${pageContext.request.contextPath}/board.do"><button class="board_post_list_button"> 글 목록 </button></a>
-	<button class="board_post_list_button"> 글 수정 </button>
-	<button class="board_post_list_button"> 글 삭제 </button>
 	
+	<form id="comment_form" action="" method="${pageContext.request.contextPath}/commentInsert.do">
+		<input type="text" name="comment_content" id="comment_content">
+		<input type="button" onclick="checkSubmit()">
+	</form>
+	
+	<button class="board_post_list_button"> 글 수정 </button>
+	<button class="board_post_list_button"> 글 삭제 </button>	
 </section>
-</body>
-</html>
+<script>
+	function checkSubmit() {
+		let content = document.getElementId("comment_content");
+		if (content.value !== "") {
+			document.getElementId("comment_form").submit();
+		}
+	}
+</script>
