@@ -5,8 +5,11 @@
 	String contentPage = (String)request.getAttribute("page");
 	String alert = (String)request.getAttribute("alert");
 	
-  	if (contentPage==null)
+  	if (contentPage==null){
    		contentPage="main";
+   		RequestDispatcher dispatcher = request.getRequestDispatcher("/index.do");
+		dispatcher.forward(request, response);
+  	}
   	
   	if (alert != null) {
   		out.println("<script>");
