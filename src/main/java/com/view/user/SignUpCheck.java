@@ -17,7 +17,7 @@ public class SignUpCheck extends HttpServlet {
 
 		UserDAO dao = new UserDAO();
 		UserDTO dto = new UserDTO();
-		System.out.println("ajax받음");
+
 		//id email 각각 dao로 중복 검사, 중복안되면 null 중복 안되면 dto 반환
 		dto = dao.selectUserId(id);
 		

@@ -15,7 +15,7 @@ public class UserDAO {
 	ResultSet rs=null;
 	
 	public boolean insertUser(UserDTO mem) {
-		boolean result = false;
+		boolean isResult = false;
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_INSERT);
@@ -29,54 +29,48 @@ public class UserDAO {
 			pstmt.setString(8, mem.getGender());
 			pstmt.setString(9, mem.getBirth());
 			pstmt.executeUpdate();
-			result = true;
+			isResult = true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			result = false;
 		} finally {
 			JDBCutil.close(pstmt, conn);
 		}
-		return result;
+		return isResult;
 	}
 	
 	public boolean updateUser(String feild, String value, String user_id){
-		boolean result = false;
+		boolean isResult = false;
 		try {
 			conn=JDBCutil.getConnection();
-			pstmt = conn.prepareStatement(MakeUpdateSql(feild, value, user_id));
+			pstmt = conn.prepareStatement("update usertbl set " + feild + " = '" + value + "' where user_id = '" + user_id + "'; ");
 			pstmt.executeUpdate();
-			result = true;
+			isResult = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			result = false;
 		} finally {
 			JDBCutil.close(pstmt, conn);
 		}
-		return result;
-	}
-	private String MakeUpdateSql(String feild, String value, String user_id) {
-		return "update usertbl set " + feild + " = '" + value + "' where user_id = '" + user_id + "'; ";
+		return isResult;
 	}
 	
 	public boolean deleteUser(String user_id) {
-		boolean result = false;
+		boolean isResult = false;
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(USER_DELETE);
 			pstmt.setString(1, user_id);
 			pstmt.executeUpdate();
-			result = true;
+			isResult = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			result = false;
 		} finally {
 			JDBCutil.close(pstmt, conn);
 		}
-		return result;
+		return isResult;
 	}
 	
 	private UserDTO resultToDTO(ResultSet rs) {
-		UserDTO rd=new UserDTO();
+		UserDTO rd = new UserDTO();
 		try {
 			rd.setId(rs.getString("user_id"));
 			rd.setPassword(rs.getString("password"));

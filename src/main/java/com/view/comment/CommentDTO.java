@@ -2,7 +2,7 @@ package com.view.comment;
 
 public class CommentDTO {
 	private int commentId;
-	private int boardId;
+	private int board_id;
 	private String userId;
 	private String comment_content;
 	private String date;
@@ -13,11 +13,11 @@ public class CommentDTO {
 	public void setCommentId(int commentId) {
 		this.commentId = commentId;
 	}
-	public int getBoardId() {
-		return boardId;
+	public int getBoard_id() {
+		return board_id;
 	}
-	public void setBoardId(int boardId) {
-		this.boardId = boardId;
+	public void setBoard_id(int board_id) {
+		this.board_id = board_id;
 	}
 	public String getUserId() {
 		return userId;

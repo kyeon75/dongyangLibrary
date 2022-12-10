@@ -25,7 +25,7 @@ public class SignUpAction implements Action {
         		paramMap.put(key, tmp);
         	} else {
         		request.setAttribute("alert", "회원가입에 실패했습니다.");
-      	  		return "main";
+      	  		return "index";
         	}
         }
         

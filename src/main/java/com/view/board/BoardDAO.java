@@ -12,6 +12,8 @@ public class BoardDAO {
 	final String BOARD_INSERT="insert into boardtbl(board_title, board_content, user_id) values(?, ?, ?);";
 	final String BOARD_LIST="select * from boardtbl order by board_id desc LIMIT ?, ?;";
 	final String BOARD_SELECT_ID = "select * from boardtbl where board_id= ?;";
+	final String BOARD_DELETE = "delete from boardtbl where board_id = ?";
+	final String BOARD_SELETE_TITLE = "";
 	Connection conn=null;
 	PreparedStatement pstmt = null;
 	ResultSet rs=null;
@@ -89,5 +91,36 @@ public class BoardDAO {
 			JDBCutil.close(rs, pstmt, conn);
 		}
 		return dto;
+	}
+	
+	public boolean deleteBoard(int board_id) {
+		boolean isResult = false;
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_DELETE);
+			pstmt.setInt(1, board_id);
+			pstmt.executeUpdate();
+			isResult = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		return isResult;
+	}
+	
+	public boolean updateBoard(String feild, String value, int board_id) {
+		boolean isResult = false;
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement("update boardtbl set " + feild + " = '" + value + "' where board_id = " + board_id + "; ");
+			pstmt.executeUpdate();
+			isResult = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		return isResult;
 	}
 }

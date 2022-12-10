@@ -14,7 +14,7 @@
 	<br>
 	
 	<div class="board_post_user">
-		${requestScope.user}
+		${requestScope.user_id}
 	</div>
 	
 	<div>
@@ -46,7 +46,6 @@
 	<form id="comment_form" action="${pageContext.request.contextPath}/commentInsert.do" method="post">
 		<input type="text" name="comment_content" id="comment_content">
 		<input type="hidden" name="board_id" value="${param.board_id}">
-		<input type="hidden" name="user_id" value="${sessionScope.id}">
 		<input type="button" onclick="checkSubmit()" value="댓글작성">
 	</form>
 	
@@ -54,8 +53,10 @@
 	
 	<div>
 		<a href="${pageContext.request.contextPath}/board.do"><button class="board_post_list_button"> 글 목록 </button></a>
-		<button class="board_post_list_button"> 글 수정 </button>
-		<button class="board_post_list_button"> 글 삭제 </button>	
+		<c:if test="${requestScope.user_id.equals(sessionScope.id)}">
+			<button class="board_post_list_button"><a href="${pageContext.request.contextPath}/postUpdate.do?board_id=${param.board_id}">글 수정</a></button>
+			<button class="board_post_list_button"><a href="${pageContext.request.contextPath}/postDelete.do?board_id=${param.board_id}">글 삭제</a></button>	
+		</c:if>
 	</div>
 </section>
 <script>

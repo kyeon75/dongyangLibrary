@@ -19,7 +19,10 @@ import com.view.admin.AdminUserUpdateAction;
 import com.view.admin.AdminUserUpdateProcAction;
 import com.view.board.BoardAction;
 import com.view.board.BoardPostAction;
-import com.view.board.BoardPostEditorAction;
+import com.view.board.BoardPostDeleteAction;
+import com.view.board.BoardInsertAction;
+import com.view.board.BoardPostUpdateAction;
+import com.view.board.BoardPostUpdateProcAction;
 import com.view.book.BestBookListAction;
 import com.view.book.BookCategoryAction;
 import com.view.book.BookListAction;
@@ -61,10 +64,6 @@ public class FrontController extends HttpServlet {
 		Boolean isAdminPage = false;
 		Boolean isForward = true;
 		
-		System.out.println(requestURI);
-		System.out.println(contextPath);
-		System.out.println(page);
-		
 		if (page.equals("/signUp.do")) {
 			viewPage = "signUp";
 		} else if (page.equals("/signUpProcess.do")) {
@@ -92,8 +91,8 @@ public class FrontController extends HttpServlet {
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/postEditor.do")) {
 			viewPage = "boardPostEditor";
-		} else if (page.equals("/postEditorProcess.do")) {
-			action = new BoardPostEditorAction();
+		} else if (page.equals("/postInsert.do")) {
+			action = new BoardInsertAction();
 			viewPage = action.execute(request, response);
 			isForward = false;
 		} else if (page.equals("/post.do")) {
@@ -168,6 +167,17 @@ public class FrontController extends HttpServlet {
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/commentInsert.do")) {
 			action = new CommentInsertAction();
+			viewPage = action.execute(request, response);
+			isForward = false;
+		} else if (page.equals("/postDelete.do")) {
+			action = new BoardPostDeleteAction();
+			viewPage = action.execute(request, response);
+			isForward = false;
+		} else if (page.equals("/postUpdate.do")) {
+			action = new BoardPostUpdateAction();
+			viewPage = action.execute(request, response);
+		} else if (page.equals("/postUpdateProc.do")) {
+			action = new BoardPostUpdateProcAction();
 			viewPage = action.execute(request, response);
 			isForward = false;
 		}

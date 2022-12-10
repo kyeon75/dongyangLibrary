@@ -21,7 +21,7 @@ public class CommentDAO {
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(COMMENT_INSERT);
-			pstmt.setInt(1, dto.getBoardId());
+			pstmt.setInt(1, dto.getBoard_id());
 			pstmt.setString(2, dto.getUserId());
 			pstmt.setString(3, dto.getComment_content());
 			pstmt.executeUpdate();
@@ -45,7 +45,7 @@ public class CommentDAO {
 			while(rs.next()) {
 				CommentDTO rd=new CommentDTO();
 				rd.setCommentId(rs.getInt("comment_id"));
-				rd.setBoardId(rs.getInt("board_id"));
+				rd.setBoard_id(rs.getInt("board_id"));
 				rd.setUserId(rs.getString("user_id"));
 				rd.setDate(rs.getString("comment_date"));
 				rd.setComment_content(rs.getString("comment_content"));

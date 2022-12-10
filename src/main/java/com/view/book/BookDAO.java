@@ -29,7 +29,6 @@ public class BookDAO {
 			System.out.println("검색할때 오류");
 			e.printStackTrace();
 		}
-		
 		return totalCount;
 	}
 	
@@ -44,37 +43,23 @@ public class BookDAO {
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(query);
-			
-			
 			rs = pstmt.executeQuery();
-			
-			
-			
 			while(rs.next()) {
 				BookDTO dto = new BookDTO();
 				dto.setBook_id(rs.getString("book_id"));//도서번호
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
-				dto.setDescription(rs.getString("description"));//도서줄거리
-				
+				dto.setDescription(rs.getString("description"));//도서줄거리	
 				bList.add(dto);
-				
 			}
-			
 		}catch (Exception e) {
 			System.out.println("검색할때 오류");
 			e.printStackTrace();
 		}finally {
 			JDBCutil.close(rs, pstmt, conn);
 		}
-		
-		
 		return bList;
-		
-		
-		
-		
 	}
 	//카테고리 검색
 	public List<BookDTO> selectCategory(String standard) {
@@ -85,10 +70,7 @@ public class BookDAO {
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(query);
-			
 			rs = pstmt.executeQuery();
-			
-			
 			
 			while(rs.next()) {
 				BookDTO dto = new BookDTO();
@@ -97,22 +79,13 @@ public class BookDAO {
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
 				dto.setDescription(rs.getString("description"));//도서줄거리
-				
 				bList.add(dto);
-				
 			}
-			
 		}catch (Exception e) {
 			System.out.println("카테고리 검색할때 오류");
 			e.printStackTrace();
 		}
-		
-		
 		return bList;
-		
-		
-		
-		
 	}
 
 	public BookDTO selectBook(String id) {
@@ -126,7 +99,7 @@ public class BookDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				dto.setBook_id(rs.getString("book_id"));//책아이디
-				dto.setWriter(rs.getString("writer"));//작가
+				dto.setWriter(rs.getString("author"));//작가
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
@@ -134,10 +107,7 @@ public class BookDAO {
 			}else {
 				return null;
 			}
-			
-			
 		}catch (Exception e) {
-			System.out.println("id검색할때 오류");
 			e.printStackTrace();
 		}
 		
@@ -148,13 +118,11 @@ public class BookDAO {
 		List<BookDTO> bList = new Vector<BookDTO>();
 		
 		String query = "select * from booktbl where book_title like  '%" +
-		searchWord + "%' or writer like '%" + searchWord + "%'";
+		searchWord + "%' or author like '%" + searchWord + "%'";
 		
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(query);
-			
-			
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -164,21 +132,14 @@ public class BookDAO {
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
 				dto.setDescription(rs.getString("description"));//도서줄거리
-				
 				bList.add(dto);
-				
 			}
-			
 		}catch (Exception e) {
-			System.out.println("검색할때 오류");
 			e.printStackTrace();
 		}finally {
 			JDBCutil.close(rs, pstmt, conn);
 		}
-		
-		
-		return bList;
-		
+		return bList;	
 	}
 	
 	public List<BookDTO> selectBookMainPage(String standard) {
@@ -190,39 +151,22 @@ public class BookDAO {
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(query);
-			
-			
 			rs = pstmt.executeQuery();
-			
-			
-			
+
 			while(rs.next()) {
 				BookDTO dto = new BookDTO();
 				dto.setBook_id(rs.getString("book_id"));//도서번호
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
-				dto.setWriter(rs.getString("writer"));//저자
+				dto.setWriter(rs.getString("author"));//저자
 				dto.setPublisher(rs.getString("publisher"));//출판사
-				
-				
 				bList.add(dto);
-				
 			}
-			
-			System.out.println("메인 dto에 넣기 성공!!");
-			
 		}catch (Exception e) {
-			System.out.println("메인검색할때 오류");
 			e.printStackTrace();
 		}finally {
 			JDBCutil.close(rs, pstmt, conn);
 		}
-		
-		
 		return bList;
-		
-		
-		
-		
 	}
 }

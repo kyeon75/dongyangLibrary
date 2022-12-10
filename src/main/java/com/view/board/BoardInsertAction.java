@@ -6,13 +6,13 @@ import javax.servlet.http.HttpSession;
 
 import com.view.common.Action;
 
-public class BoardPostEditorAction implements Action {
+public class BoardInsertAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
+		String title = request.getParameter("board_title");
+		String content = request.getParameter("board_content");
 		String user_id = (String)session.getAttribute("id");
 		
 		if (user_id == null) {

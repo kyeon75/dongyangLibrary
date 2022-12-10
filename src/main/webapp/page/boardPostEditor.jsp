@@ -4,9 +4,9 @@
 <section class="container">
 	<h1 class="board_post_editor_title">글작성</h1>
 	
-	<form action="${pageContext.request.contextPath}/postEditorProcess.do" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
-		<input placeholder="제목을 입력하세요" class="post_title" type="text" name="title"/>
-		<textarea class="post_content" name="content"></textarea>
+	<form action="${pageContext.request.contextPath}/postInsert.do" method="post" onSubmit="return checkForm()" onkeydown="return event.key != 'Enter';">
+		<input placeholder="제목을 입력하세요" class="post_title" type="text" name="board_title"/>
+		<textarea class="post_content" name="board_content"></textarea>
 		<input class="post_submit" type="submit" value="등록">
 	</form>
 	<a href="${pageContext.request.contextPath}/board.do"><button class="post_delete_button"> 취소 </button></a>
