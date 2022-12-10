@@ -29,6 +29,7 @@ import com.view.book.HotBookListAction;
 import com.view.book.MainAction;
 import com.view.buy.BookCartAction;
 import com.view.buy.PaymentAction;
+import com.view.comment.CommentInsertAction;
 import com.view.user.LoginAction;
 import com.view.user.LogoutAction;
 import com.view.user.MyInfoAction;
@@ -165,7 +166,11 @@ public class FrontController extends HttpServlet {
 		} else if (page.equals("/index.do")) {
 			action = new MainAction();
 			viewPage = action.execute(request, response);
-		} 
+		} else if (page.equals("/commentInsert.do")) {
+			action = new CommentInsertAction();
+			viewPage = action.execute(request, response);
+			isForward = false;
+		}
 		
 		
 		request.setAttribute("page", viewPage);
@@ -181,7 +186,7 @@ public class FrontController extends HttpServlet {
 			if (isAdminPage) {
 				response.sendRedirect(request.getContextPath() + "/admin/" + viewPage + ".do");
 			} else {
-				response.sendRedirect(request.getContextPath() + "/" + viewPage + ".do");
+				response.sendRedirect(request.getContextPath() + "/" + viewPage);
 			}
 		}
 	}

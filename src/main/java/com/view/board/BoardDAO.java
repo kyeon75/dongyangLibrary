@@ -66,12 +66,12 @@ public class BoardDAO {
 		}
 		return aList;
 	}
-	public BoardDTO selectBoardId(String id) {
+	public BoardDTO selectBoardId(int id) {
 		BoardDTO dto = new BoardDTO();
 		try {
 			conn=JDBCutil.getConnection();
 			pstmt = conn.prepareStatement(BOARD_SELECT_ID);
-			pstmt.setString(1, id);
+			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				dto.setBoard_id(rs.getInt("board_id"));

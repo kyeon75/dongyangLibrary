@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <li>
 	<div class="board_post_comment_user">
-		댓글 작성자
+		<c:out value="${param.user_id}"/>
 	</div>
 	
 	<div class="board_post_comment_content">
-		댓글 내용
+		<c:out value="${param.content}"/>
 	</div>
 			
 	<div class="board_post_comment_date">
-		작성 날짜
+		<c:out value="${param.date}"/>
 	</div>
 	<br><hr>
 </li>

@@ -17,7 +17,7 @@ public class BoardPostEditorAction implements Action {
 		
 		if (user_id == null) {
 			request.setAttribute("alert", "회원 전용 게시판입니다. 로그인해주세요");
-			return "board";
+			return "login.do";
 		}
 		
 		BoardDTO dto = new BoardDTO();
@@ -32,6 +32,6 @@ public class BoardPostEditorAction implements Action {
 			request.setAttribute("alert", "게시판 작성에 실패하셨습니다.");
 		}
 		
-		return "board";
+		return "board.do";
 	}
 }
