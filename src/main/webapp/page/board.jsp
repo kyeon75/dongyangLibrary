@@ -27,16 +27,16 @@
 	<ul class="board_page_list">
 		<c:if test="${param.board_page ne null && param.board_page > 5}">
 			<c:forEach var="num" begin="${param.board_page-5}" end="${param.board_page+4}">
-				<c:import url="${application.getserverinfo()}/module/boardPageItem.jsp" charEncoding="UTF-8">
-					<c:param name="boardPageNum" value="${num}" />
-				</c:import>
+				<li class="board_page_list_num">
+					<a href="${pageContext.request.contextPath}/board.do?board_page=${num}"><c:out value="${num}"/></a>
+				</li>
 			</c:forEach> 
 		</c:if>
 		<c:if test="${param.board_page eq null || param.board_page < 6}">
 			<c:forEach var="num" begin="1" end="10">
-				<c:import url="${application.getserverinfo()}/module/boardPageItem.jsp" charEncoding="UTF-8">
-					<c:param name="boardPageNum" value="${num}" />
-				</c:import>
+				<li class="board_page_list_num">
+					<a href="${pageContext.request.contextPath}/board.do?board_page=${num}"><c:out value="${num}"/></a>
+				</li>
 			</c:forEach> 
 		</c:if>
 	</ul>

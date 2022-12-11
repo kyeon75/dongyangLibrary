@@ -11,6 +11,7 @@ import com.dm.common.JDBCutil;
 public class BoardDAO {
 	final String BOARD_INSERT="insert into boardtbl(board_title, board_content, user_id) values(?, ?, ?);";
 	final String BOARD_LIST="select * from boardtbl order by board_id desc LIMIT ?, ?;";
+	final String BOARD_USER_ID_LIST = "select * from boardtbl where user_id = ?;";
 	final String BOARD_SELECT_ID = "select * from boardtbl where board_id= ?;";
 	final String BOARD_DELETE = "delete from boardtbl where board_id = ?";
 	final String BOARD_SELETE_TITLE = "";
@@ -68,6 +69,30 @@ public class BoardDAO {
 		}
 		return aList;
 	}
+	public ArrayList<BoardDTO> selectBoardListUser_id(String user_id) {
+		ArrayList<BoardDTO> aList = new ArrayList<BoardDTO>();
+		try {
+			conn=JDBCutil.getConnection();
+			pstmt = conn.prepareStatement(BOARD_USER_ID_LIST);
+			pstmt.setString(1, user_id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardDTO dto = new BoardDTO();
+				dto.setBoard_id(rs.getInt("board_id"));
+				dto.setBoard_title(rs.getString("board_title"));
+				dto.setBoard_content(rs.getString("board_content"));
+				dto.setUser_id(rs.getString("user_id"));
+				dto.setPostdate(rs.getString("postdate"));
+				dto.setVisitcount(rs.getInt("visitcount"));
+				aList.add(dto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCutil.close(rs, pstmt, conn);
+		}
+		return aList;
+	}
 	public BoardDTO selectBoardId(int id) {
 		BoardDTO dto = new BoardDTO();
 		try {
@@ -92,7 +117,6 @@ public class BoardDAO {
 		}
 		return dto;
 	}
-	
 	public boolean deleteBoard(int board_id) {
 		boolean isResult = false;
 		try {

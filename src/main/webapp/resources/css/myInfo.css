@@ -38,4 +38,21 @@ table, td, tr{
 }
 .myInfo_box {
 	display: inline-block;
+	width: 500px;
+}
+.myInfo_line {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+.myInfo_key {
+	display: inline-block;
+	width: 20%;
+	text-align: left;
+}
+.myInfo_value {
+	display: inline-block;
+	width: 70%;
+	text-align: left;
 }
