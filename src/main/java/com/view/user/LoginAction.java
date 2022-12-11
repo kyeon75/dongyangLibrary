@@ -23,7 +23,7 @@ public class LoginAction implements Action{
 			HttpSession session = request.getSession();
 			session.setAttribute("id", dto.getId());
 			request.setAttribute("alert", "로그인 성공");
-			return "main";
+			return "/";
 		} else {
 			request.setAttribute("alert", "로그인 실패");
 			return "login";

@@ -3,29 +3,24 @@
 
 
 <c:forEach items="${ bLists }" var="book" varStatus="loop">
-<li class="book_item">
-	<hr>
-	<div class="book_item_section">
-		<div class="book_item_img">
-			<img src="${pageContext.request.contextPath}/resources/img/${book.img_src}.jpg" >
-		</div>
+	<li class="book_item">
+		<img class="book_item_img" src="${pageContext.request.contextPath}/resources/img/${book.img_src}.jpg" >
+		
 		<div class="book_item_info">
-				<a href="${pageContext.request.contextPath}/book.do?book_id=${book.book_id}">${book.book_title }</a> <br>
-				${book.price } <br><br>
-				${book.description } <br><br>
-				${book.score }
+				<span class="book_item_name"><a href="${pageContext.request.contextPath}/book.do?book_id=${book.book_id}">${book.book_title }</a></span><br>
+				${book.price}원 <br><br>
+				${book.description}
 		</div>
-		<br><br>
+		
 		<div class="book_button_wrap">
 			<button class="book_button_cart" type="button" >
 				장바구니에 담기
-			</button>
+			</button><br>
 			<button class="book_button_payment" type="button">
 				바로 구매하기
 			</button>
 		</div>
-	</div>
-</li>
+	</li>
 </c:forEach>
 
 <!-- <button class="book_prev_button" onclick="location.href='header.jsp?start=1' "> 이전 </button> -->

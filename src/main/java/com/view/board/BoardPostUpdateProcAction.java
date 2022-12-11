@@ -1,13 +1,10 @@
 package com.view.board;
 
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.view.comment.CommentDAO;
-import com.view.comment.CommentDTO;
 import com.view.common.Action;
 
 public class BoardPostUpdateProcAction implements Action {

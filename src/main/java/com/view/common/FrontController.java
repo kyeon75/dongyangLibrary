@@ -33,6 +33,7 @@ import com.view.book.MainAction;
 import com.view.buy.BookCartAction;
 import com.view.buy.PaymentAction;
 import com.view.comment.CommentInsertAction;
+import com.view.review.ReviewInsertAction;
 import com.view.user.LoginAction;
 import com.view.user.LogoutAction;
 import com.view.user.MyInfoAction;
@@ -178,6 +179,10 @@ public class FrontController extends HttpServlet {
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/postUpdateProc.do")) {
 			action = new BoardPostUpdateProcAction();
+			viewPage = action.execute(request, response);
+			isForward = false;
+		} else if (page.equals("/bookReviewInsert.do")) {
+			action = new ReviewInsertAction();
 			viewPage = action.execute(request, response);
 			isForward = false;
 		}

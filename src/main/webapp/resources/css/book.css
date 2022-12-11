@@ -1,35 +1,37 @@
 @charset "UTF-8";
 
+.book_box {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
 .book_image{
-	float:left;
-	width: 300px;
+	width: 30%;
 }
-
 .book_info{
-	float:left;
-	width: 600px;
-	height: 400px;
+	width: 35%;
 }
-
+.book_buy{
+	padding-top: 30px;
+	width: 20%;
+}
 .book_name{
 	font-weight: bold;
 	font-size: 20px;
 }
 
 .book_count{
-	width: 300px;
+	display:flex;
+	width: 150px;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .book_buy_quantity_botton{
 	padding: 10px 20px;
-}
-
-
-.book_buy{
-	padding-top: 30px;
-	float:left;
-	width: 300px;
-	height: 400px;
 }
 
 .book_full_price{
@@ -46,20 +48,59 @@
 }
 
 .book_explain{
-	float:left;
+	padding: 30px 0px;
+	line-height: 22px;
+}
+.book_explain_title {
+	font-size: 1.2rem;
+	font-weight: bold;
 }
 
 .book_review_h1{
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 1.2rem;
 }
 
 .book_review_user{
-	float:left;
 	width: 200px;
 }
 
 .book_review_content{
-	float:left;
 	width: 1000px;
+}
+#review_form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+.star {
+  position: relative;
+  font-size: 2rem;
+  color: #ddd;
+}
+
+.star input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star span {
+  width: 0;
+  position: absolute; 
+  left: 0;
+  color: red;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#review_content {
+	width: 500px;
+	height: 50px;
+}
+#review_submit {
+	width: 100px;
 }

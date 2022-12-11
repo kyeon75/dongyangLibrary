@@ -13,6 +13,6 @@ public class LogoutAction implements Action{
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("id");
-		return "main";
+		return "/";
 	}
 }

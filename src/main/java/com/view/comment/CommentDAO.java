@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.dm.common.JDBCutil;
-import com.view.user.UserDTO;
 
 public class CommentDAO {
 	final String COMMENT_INSERT="insert into comment(board_id, user_id, comment_content) values(?, ?, ?);";
