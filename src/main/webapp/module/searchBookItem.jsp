@@ -13,7 +13,7 @@
 		</div>
 		
 		<div class="book_button_wrap">
-			<button class="book_button_cart" type="button" >
+			<button class="book_button_cart" type="button" onclick="addCart(${book.book_id})">
 				장바구니에 담기
 			</button><br>
 			<button class="book_button_payment" type="button">
@@ -33,3 +33,16 @@
 		
 <!-- <button class="book_next_button" onclick="location.href='header.jsp?start=1' "> 다음 </button> -->
 
+<script>
+function addCart(book_id) {
+	fetch("./CartInsert?book_id=" + book_id + "&book_count=1")
+	.then(response => response.text())
+	.then(res => { 
+		if (res === "true") {
+			alert("장바구니 담기 성공")
+		} else {
+			alert("장바구니 담기 실패")
+		}
+	})
+}
+</script>

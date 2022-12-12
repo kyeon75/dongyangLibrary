@@ -54,8 +54,8 @@
 	<div>
 		<a href="${pageContext.request.contextPath}/board.do"><button class="board_post_list_button"> 글 목록 </button></a>
 		<c:if test="${requestScope.user_id.equals(sessionScope.id)}">
-			<button class="board_post_list_button"><a href="${pageContext.request.contextPath}/postUpdate.do?board_id=${param.board_id}">글 수정</a></button>
-			<button class="board_post_list_button"><a href="${pageContext.request.contextPath}/postDelete.do?board_id=${param.board_id}">글 삭제</a></button>	
+			<button type="button" class="board_post_list_button"><a href="${pageContext.request.contextPath}/postUpdate.do?board_id=${param.board_id}">글 수정</a></button>
+			<button type="button" class="board_post_list_button"><a href="${pageContext.request.contextPath}/postDelete.do?board_id=${param.board_id}">글 삭제</a></button>	
 		</c:if>
 	</div>
 </section>

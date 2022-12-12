@@ -30,7 +30,7 @@ import com.view.book.BookSearchAction;
 import com.view.book.DiscountBookListAction;
 import com.view.book.HotBookListAction;
 import com.view.book.MainAction;
-import com.view.buy.BookCartAction;
+import com.view.buy.CartDelete;
 import com.view.buy.PaymentAction;
 import com.view.comment.CommentInsertAction;
 import com.view.review.ReviewInsertAction;
@@ -82,8 +82,7 @@ public class FrontController extends HttpServlet {
 			action = new MyInfoAction();
 			viewPage = action.execute(request, response);
 		} else if (page.equals("/bookcart.do")) {
-			action = new BookCartAction();
-			viewPage = action.execute(request, response);
+			viewPage = "bookcart";
 		} else if (page.equals("/payment.do")) {
 			action = new PaymentAction();
 			viewPage = action.execute(request, response);
@@ -186,7 +185,6 @@ public class FrontController extends HttpServlet {
 			viewPage = action.execute(request, response);
 			isForward = false;
 		}
-		
 		
 		request.setAttribute("page", viewPage);
 		if (isForward) {

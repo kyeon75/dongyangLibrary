@@ -10,33 +10,33 @@
 }
 
 .cart_list{
-	float:left;
 	margin-top: 30px;
 	width: 950px;
 }
-
 .cart_list_item{
 	margin-bottom: 50px;
 }
-
+.cart_list_item_box {
+	display: flex;
+}
 .cart_list_item_img{
-	float:left;
+	width: 200px;
 	margin-right: 50px;
 }
 
 .cart_list_item_info{
-	float:left;
+
 	width: 300px;
 }
 
 .cart_list_item_author{
-	float:left;
+
 	margin-right: 30px;
 }
 
 
 .cart_list_item_price{
-	float:left;
+
 	margin-right: 50px;
 	font-weight: bold;
 }
@@ -64,4 +64,8 @@
 
 .cart_payment_button{
 	padding: 10px 40px;
+}
+.cart_list_delete {
+	height: 30px;
+	width: 200px;
 }

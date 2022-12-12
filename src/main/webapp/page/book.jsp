@@ -21,7 +21,7 @@
 		<div class="book_buy">
 			<h1 class="book_full_price"> 총 도서 금액 </h1> <br>
 			<h1 class="book_full_price" id="book_total_price">${ price }</h1> <br><br><br>
-			<button class="book_cart_button" type="button" onclick=""> 장바구니 담기 </button> <br><br>
+			<button class="book_cart_button" type="button" onclick="addCart(${param.book_id})"> 장바구니 담기 </button> <br><br>
 			<button class="book_payment_button" type="button"> 바로 구매하기 </button>
 		</div>
 	</div>

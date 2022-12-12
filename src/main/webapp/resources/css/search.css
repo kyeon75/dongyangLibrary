@@ -20,6 +20,7 @@
 	font-weight: bold;
 	font-size: 1.2rem;
 }
+
 .left_module{
 	display: inline-flex;
 	flex-direction: column;
@@ -59,20 +60,19 @@
   	-webkit-box-orient: vertical;
  	line-height: 22px;
 	max-height: 220px;
-	margin-right: 10%;
+	margin-right: 5%;
 }
 .book_item_name {
 	font-weight: bold;
 	font-size: 1.2rem;
 }
 .book_button_wrap{
-	width: 10%;
+	width: 15%;
+	display: inline-block;
 }
-
-.book_button_cart{
-
-}
-
-.book_button_payment{
-
+.book_button_wrap button{
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
 }

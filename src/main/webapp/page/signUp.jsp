@@ -104,7 +104,7 @@
 				<div class="css-82a6rk e744wfw3">
 					<div class="css-jmalg e1uzxhvi6">
 						<div class="css-176lya2 e1uzxhvi3">
-							<input id="email" name="email" placeholder="예: marketkurly@kurly.com" type="text" class="css-1bkd15f e1uzxhvi2">
+							<input id="email" name="email" placeholder="예: dongyangLibrart@dongyang.com" type="text" class="css-1bkd15f e1uzxhvi2">
 						</div>
 					</div>
 				</div>

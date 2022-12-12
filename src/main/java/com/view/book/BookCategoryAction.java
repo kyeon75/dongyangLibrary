@@ -30,7 +30,6 @@ public class BookCategoryAction implements Action {
 			field+="예술";
 		}
 		
-			
 		request.setAttribute("title", field);
 		
 		BookDAO dao = new BookDAO();

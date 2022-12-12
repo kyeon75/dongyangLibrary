@@ -28,3 +28,16 @@ window.onload = function() {
 		document.getElementsByClassName("book_review_score")[i].getElementsByClassName(`star_ss`)[0].style.width = `${star_num * 10}%`;
 	}
 }
+
+function addCart(book_id) {
+	let book_count = document.getElementById("book_num").innerText
+	fetch("./CartInsert?book_id=" + book_id + "&book_count=" + book_count)
+	.then(response => response.text())
+	.then(res => { 
+		if (res === "true") {
+			alert("장바구니 담기 성공")
+		} else {
+			alert("장바구니 담기 실패")
+		}
+	})
+}
