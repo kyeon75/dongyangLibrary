@@ -8,7 +8,8 @@
 		
 		<div class="book_item_info">
 				<span class="book_item_name"><a href="${pageContext.request.contextPath}/book.do?book_id=${book.book_id}">${book.book_title }</a></span><br>
-				${book.price}원 <br><br>
+				${book.price}원 <br>
+				${book.writer} <br><br>
 				${book.description}
 		</div>
 		

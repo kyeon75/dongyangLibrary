@@ -11,7 +11,7 @@ public class DiscountBookListAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("title", "discount");
+		request.setAttribute("title", "할인상품");
 		BookDAO dao = new BookDAO();
 		
 		List<BookDTO> bLists = dao.selectBookPage("discount");

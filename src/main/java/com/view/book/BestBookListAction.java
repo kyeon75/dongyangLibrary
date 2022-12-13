@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.view.common.Action;
 
-
-
 public class BestBookListAction implements Action {
 
 	@Override
@@ -20,8 +18,6 @@ public class BestBookListAction implements Action {
 		List<BookDTO> bLists = dao.selectBookPage("total_buy");
 		
 		request.setAttribute("bLists", bLists);
-		
-		
 		
 		return "search";
 	}

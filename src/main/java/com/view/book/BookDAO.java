@@ -49,6 +49,7 @@ public class BookDAO {
 				dto.setBook_id(rs.getString("book_id"));//도서번호
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
+				dto.setWriter(rs.getString("author"));
 				dto.setPrice(rs.getInt("price"));//도서가격
 				dto.setDescription(rs.getString("description"));//도서줄거리	
 				bList.add(dto);
@@ -78,6 +79,7 @@ public class BookDAO {
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
+				dto.setWriter(rs.getString("author"));
 				dto.setDescription(rs.getString("description"));//도서줄거리
 				bList.add(dto);
 			}
@@ -103,6 +105,7 @@ public class BookDAO {
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
+				dto.setWriter(rs.getString("author"));
 				dto.setDescription(rs.getString("description"));//도서줄거리
 			}else {
 				return null;
@@ -131,6 +134,7 @@ public class BookDAO {
 				dto.setImg_src(rs.getString("img_src"));//도서이미지
 				dto.setBook_title(rs.getString("book_title"));//도서제목
 				dto.setPrice(rs.getInt("price"));//도서가격
+				dto.setWriter(rs.getString("author"));
 				dto.setDescription(rs.getString("description"));//도서줄거리
 				bList.add(dto);
 			}

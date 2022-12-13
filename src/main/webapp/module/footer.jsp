@@ -2,6 +2,5 @@
 <footer>
 	<div class="container">
 		<h3>footer</h3>
-		<div></div>
 	</div>
 </footer>

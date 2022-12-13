@@ -11,7 +11,7 @@ public class HotBookListAction implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("title", "hot");
+		request.setAttribute("title", "핫한상품");
 		
 		BookDAO dao = new BookDAO();
 		
